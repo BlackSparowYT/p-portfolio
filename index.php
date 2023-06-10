@@ -124,20 +124,22 @@
                 </div>
                 <div class="ervaringen" id="ervaringen">
                     <h1>Mijn Ervaringen</h1>
-                    <div class="text-block">
-                        <div class="block"><img src="./files/images/icon-html.svg"><h3>HTML</h3></div>
-                        <div class="block"><img src="./files/images/icon-css.svg"><h3>CSS</h3></div>
-                        <div class="block"><img src="./files/images/icon-js.svg"><h3>JavaScript</h3></div>
-                        <div class="block"><img src="./files/images/icon-java.svg"><h3>Java</h3></div>
-                    </div>
-                    <div class="image-block">
-                        <?php echo '<img src="'.$path.'files/images/ervaringen.svg">' ?>
+                    <div class="flex-box">
+                        <div class="text-block">
+                            <div class="block"><img src="./files/images/icon-html.svg"><h2>HTML</h2></div>
+                            <div class="block"><img src="./files/images/icon-css.svg"><h2>CSS</h2></div>
+                            <div class="block"><img src="./files/images/icon-js.svg"><h2>JavaScript</h2></div>
+                            <div class="block"><img src="./files/images/icon-java.svg"><h2>Java</h2></div>
+                        </div>
+                        <div class="image-block">
+                            <?php echo '<img src="'.$path.'files/images/ervaringen.svg">' ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
 
-        <?php //include($path."files/components/footer.php") ?>
+        <?php include($path."files/components/footer.php") ?>
 
     </body>
 </html>

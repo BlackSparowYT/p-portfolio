@@ -712,21 +712,26 @@ footer .block-2-2-1, footer .block-2-2-2 {
     margin-left: 50px;
 }
 
+.home-page .content .over-mij .text-block h1 {
+    padding-top: 20px;
+}
+
 .home-page .content .over-mij .text-block p {
     margin-left: 50px;
     font-size: large;
     width: 70%;
+    padding-bottom: 20px;
 }
 
 .home-page .content .over-mij .image-block {
     width: 40%;
     display: flex;
-    justify-content: end;
+    justify-content: start;
     min-width: 300px;   
 }
 
 .home-page .content .over-mij .image-block img {
-    width: 500px;
+    width: 90%;
     height: 400px;
     margin: 0 25% 0 0;
     border-radius: 0 10px 10px 0;
@@ -789,6 +794,7 @@ footer .block-2-2-1, footer .block-2-2-2 {
 
 .home-page .content .projecten {
     padding-top: 150px;
+    padding-bottom: 150px;
     margin-left: 10%;
     width: 80%;
 }
@@ -801,7 +807,7 @@ footer .block-2-2-1, footer .block-2-2-2 {
 }
 
 .home-page .content .projecten .button-block a {
-    width: 300px;
+    width: 400px;
     background-color: var(--accent);
     text-align: center;
     padding: 15px 0;
@@ -844,7 +850,7 @@ footer .block-2-2-1, footer .block-2-2-2 {
 }
 
 .home-page .content .projecten .project-block .flex-block .php-block {
-    width: 300px;
+    width: 400px;
     margin: 2.5% 0;
     background-color: var(--secondary);
     transition: all 0.3s;
@@ -870,6 +876,84 @@ footer .block-2-2-1, footer .block-2-2-2 {
 }
 
 
+
+/** Home / Content / Ervaringen **/
+
+.home-page .content .ervaringen {
+    padding-top: 150px;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.home-page .content .ervaringen h1 {
+    padding-bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.home-page .content .ervaringen .flex-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-page .content .ervaringen .text-block {
+    width: 50%;
+    min-width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.home-page .content .ervaringen .text-block .block {
+    width: 70%;
+    background-color: var(--accent);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px 0;
+
+    border-radius: 10px;
+}
+
+.home-page .content .ervaringen .text-block .block img {
+    margin-left: 50px;
+}
+
+.home-page .content .ervaringen .image-block {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-page .content .ervaringen .image-block img {
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 1375px) {
+    .home-page .content .ervaringen .flex-box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-page .content .ervaringen .text-block {
+        width: 50%;
+        min-width: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+}
 
 
 
