@@ -325,76 +325,66 @@ nav #navbar-mobile {
 /*** Footer ***/
 
 footer {
-    background-color: var(--secondary);
-    color: var(--black);
-    min-height: 230px;
+    padding-top: 65px;
+    background-color: var(--primary);
+    min-height: 150px;
 }
 
-footer .flex-box-1 {
+footer hr {
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid var(--darkgray);
+}
+
+
+footer .flex-box {
+    width: 80%;
+    margin: 20px auto;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: start;
     flex-direction: row;
 }
 
 footer .block-1 {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     flex-direction: column;
-    width: calc(100% / 3);
-    min-height: 200px;
-    text-align: center;
+}
+
+footer .block-1 h3 {
+    color: var(--accent);
+}
+
+footer .block-1 p {
+    margin-top: 10px;
 }
 
 footer .block-2 {
-    padding-top: 10px;
-    width: calc(100% / 3 * 2);
-    min-height: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-footer .block-3 {
-    text-align: center;
-    height: 30px;
-}
-
-footer img {
-    height: 150px;
-}
-
-footer .block-2-1 {
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-footer .block-2-1 p {
-    width: 75%;
-    margin-left: 12.5%;
-}
-
-footer .block-2-2 {
-    width: 50%;
-    height: 100%;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-footer .block-2-2-1 {
-    width: 100% !important;
-    text-align: center;
-}
-
-
-footer .block-2-2-1, footer .block-2-2-2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    float: left;
+    justify-content: start;
+    align-items: start;
+}
+
+footer .block-2 a {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent);
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+footer .block-2 a:hover {
+    transform: scale(1.02);
+    transition: all .3s;
+}
+
+footer .block-2 a img {
+    width: 40px;
+    height: 40px;
 }
 
 
@@ -558,15 +548,10 @@ footer .block-2-2-1, footer .block-2-2-2 {
 
 /** Home | Hero **/
 .home-page .hero {
-    position: normal;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
     min-height: 100vh;
     width: auto;
     z-index: 50;
     opacity: 100%;
-
     display: flex;
     flex-wrap: wrap;
 }
@@ -582,23 +567,26 @@ footer .block-2-2-1, footer .block-2-2-2 {
 .home-page .hero .block-1 {
     margin-top: 25vh;
     margin-left: 20%;
+    max-width: 400px;
     display: flex;
-    align-items: flex-end;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-page .hero .block-2 {
     margin-left: 20%;
+    max-width: 400px;
     display: flex;
-    align-items: flex-start;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-page .hero .block-3 {
     margin-left: 20%;
+    max-width: 400px;
     display: flex;
-    align-items: flex-start;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-page .hero .block-4 {
@@ -617,8 +605,13 @@ footer .block-2-2-1, footer .block-2-2-2 {
     width: 400px; 
     padding: 10px 0;
     text-align: center;
-
     border-radius: 10px;
+    transition: all .3s;
+}
+
+.home-page .hero .block-4 a:hover {
+    transform: scale(1.01);
+    transition: all .3s;
 }
 
 .home-page .hero .image-block {
@@ -647,6 +640,20 @@ footer .block-2-2-1, footer .block-2-2-2 {
 }
 
 @media only screen and (max-width: 1000px) {
+
+    
+    .home-page .hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-page .hero .text-block { align-items: center; }
+    .home-page .hero .block-1 { margin-left: 0; }
+    .home-page .hero .block-2 { margin-left: 0; }
+    .home-page .hero .block-3 { margin-left: 0; }
+    .home-page .hero .block-4 { margin-left: 0; }
+
     .home-page .hero .image-block {
         width: 100%;
         min-width: 500px;
@@ -682,11 +689,6 @@ footer .block-2-2-1, footer .block-2-2-2 {
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
-
-    /*background-image: url(../files/images/text-blob.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;*/
 }
 
 .home-page .content .over-mij .text-block {
@@ -795,7 +797,7 @@ footer .block-2-2-1, footer .block-2-2-2 {
 .home-page .content .projecten {
     padding-top: 150px;
     padding-bottom: 150px;
-    margin-left: 10%;
+    margin: 0 auto;
     width: 80%;
 }
 
@@ -841,12 +843,12 @@ footer .block-2-2-1, footer .block-2-2-2 {
 
 .home-page .content .projecten .project-block .flex-block {
     width: 100%;
-    
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     pointer-events: auto;
+    gap: 10%;
 }
 
 .home-page .content .projecten .project-block .flex-block .php-block {
@@ -860,7 +862,7 @@ footer .block-2-2-1, footer .block-2-2-2 {
 }
 
 .home-page .content .projecten .project-block .flex-block .php-block:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     transition: all 0.3s;
 }
 
@@ -868,6 +870,13 @@ footer .block-2-2-1, footer .block-2-2-2 {
     text-align: center;
     margin-top: 20px;
     padding-bottom: 20px;
+}
+
+.projecten .project-block .flex-block .php-block p {
+    text-align: center;
+    margin: 10px auto 0;
+    padding-bottom: 20px;
+    width: 80%;
 }
 
 .projecten .project-block .flex-block .php-block img {
@@ -914,8 +923,13 @@ footer .block-2-2-1, footer .block-2-2-2 {
     align-items: center;
     flex-direction: row;
     margin: 20px 0;
-
+    transition: all .3s;
     border-radius: 10px;
+}
+
+.home-page .content .ervaringen .text-block .block:hover {
+    transform: scale(1.01);
+    transition: all .3s;
 }
 
 .home-page .content .ervaringen .text-block .block img {
@@ -967,76 +981,66 @@ footer .block-2-2-1, footer .block-2-2-2 {
 
 /** Projects | Hero **/
 .projects-page .hero {
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
-    height: 90vh;
+    min-height: 100vh;
     width: auto;
+    z-index: 50;
+    opacity: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 50;
+    flex-wrap: wrap;
 }
 
-.projects-page .hero h1 {
-    margin: 0px;
-    padding: 0px;
-    color: #FFF;
-    transition: all .2s ease-in;
-    z-index: 50;
-    pointer-events: none;
-}
-
-.projects-page .hero-arrow {
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
-    height: 10vh;
-    width: auto;
+.projects-page .hero .text-block {
+    width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    z-index: 50;
-    opacity: 0.2;
+    align-items: center;
 }
-
 
 
 /** Content Block | Projects **/
 
-.projects-block-1 {
+.projects-block {
     min-height: 80vh;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     pointer-events: auto;
     margin-bottom: 55px;
     margin-top: -1.5%;
+    gap: 2.5%;
 }
 
-.projects-block-1 .block {
+.projects-block .block {
     width: 20%;
     min-width: 300px;
-    margin: 2.5%;
     height: 60%;
+    margin: 2.5% 0;
     background-color: var(--white-trans1);
     transition: all 0.3s;
     border-radius: 10px;
 }
 
-.projects-block-1 .block:hover {
-    transform: scale(1.05);
+.projects-block .block:hover {
+    transform: scale(1.01);
     transition: all 0.3s;
 }
 
-.projects-block-1 .block h3 {
+.projects-block h2 {
+    width: 100%;
+    text-align: center; 
+    font-size: x-large; 
+    margin-top: 40px;
+} 
+
+.projects-block .block h3 {
     text-align: center;
     margin-top: 20px;
 }
 
-.projects-block-1 .block p {
+.projects-block .block p {
     text-align: center;
     margin-top: 10px;
     width: 80%;
@@ -1044,109 +1048,14 @@ footer .block-2-2-1, footer .block-2-2-2 {
     margin-bottom: 15px;
 }
 
-.projects-block-1 .block img {
+.projects-block .block img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
 }
-
-
 
 .projects-flex-box {
     width: 80%;
     border-radius: 10px;
     background-color: var(--white-trans1);
     padding-bottom: 30px;
-}
-
-.projects-block-2 {
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    pointer-events: auto;
-    margin-bottom: 55px;
-    margin-top: 100px;
-}
-
-.projects-block-2 .block {
-    width: 20%;
-    min-width: 300px;
-    margin: 2.5%;
-    height: 60%;
-    background-color: var(--white-trans1);
-    transition: all 0.3s;
-    border-radius: 10px;
-}
-
-.projects-block-2 .block:hover {
-    transform: scale(1.05);
-    transition: all 0.3s;
-}
-
-.projects-block-2 h2 {
-    text-align: center;
-    margin-top: 20px;
-    font-size: x-large;
-}
-
-.projects-block-2 p {
-    text-align: center;
-    margin-top: 10px;
-    width: 80%;
-    margin-left: 10%;
-    font-size: large;
-}
-
-.projects-block-2 .projects-image-background {
-    width: 40%;
-    margin-left: 30%;
-    border-radius: 10px;
-    background-color: var(--white-trans1);
-}
-
-.projects-block-2 img {
-    width: 50%;
-    margin: 30px 0 0 25%;
-    border-radius: 10px;
-}
-
-.projects-block-2 .desc {
-    margin-bottom: 20px;
-}
-
-.projects-block-2 .bttns a {
-    color: var(--black);
-    background-color: var(--gray);
-    padding: 7px;
-    margin: 10px;
-    border-radius: 10px;
-    transition: all 0.5s;
-}
-
-.projects-block-2 .bttns a:hover {
-    transition: all 0.5s;
-    background-color: var(--darkgray);
-    color: var(--white);
-}
-
-.projects-block-2 .bttn-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.projects-block-2 .bttn-disabled:hover {
-    color: var(--black) !important;
-    background-color: var(--gray) !important;
-}
-
-@media only screen and (max-width: 550px) {
-    .projects-block-2 p {
-        text-align: left;
-        margin-top: 10px;
-        width: 90%;
-        margin-left: 10px;
-        font-size: large;
-    }
 }

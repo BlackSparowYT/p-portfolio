@@ -1,19 +1,10 @@
 <?php 
 
-    $page_is = "home";
-    $page_cat = "default"; 
+    $page['name'] = "home";
+    $page['cat'] = "default";
+    $page['lvl'] = 1;
     require_once("files/db-config.php");
     require_once("files/config.php");
-
-    $pathLVL = 1;
-
-    if ($pathLVL == 1) {
-        $path = $FirstLVL_paths;
-    } else if ($pathLVL == 2) {
-        $path = $SecondLVL_paths;
-    } else if ($pathLVL == 3) {
-        $path = $ThirdLVL_paths;
-    }
 
 ?>
 
@@ -68,9 +59,9 @@
                         <h1 class="t9">R</h1>
                     </div>
                     <div class="block-4">
-                        <a href="#over-mij"><h3>Over Mij</h3></a>
-                        <a href="#projecten"><h3>Bekijk mijn projecten</h3></a>
-                        <a href="#contact"><h3>Neem contact op</h3></a>
+                        <a class="t1" href="#over-mij"><h3>Over Mij</h3></a>
+                        <a class="t2" href="#projecten"><h3>Bekijk mijn projecten</h3></a>
+                        <a class="t3" href="#contact"><h3>Neem contact op</h3></a>
                     </div>
                 </div>
                 <div class="image-block">
@@ -110,6 +101,7 @@
                                         echo "<img src='".$path.$result['image']."' />";
                                         echo "<div class='project-flex-box'>";
                                         echo "<h2>".$result['name']."</h2>";
+                                        echo "<p>".$result['small-desc']."</p>";
                                         echo "</div>";
                                         echo "</a>"; 
                                     }
@@ -119,7 +111,7 @@
                         </div>
                     </div>
                     <div class="button-block">
-                        <a href="/projecten/index.php"><h3>Bekijk meer projecten</h3><img src="./files/images/icon-link.svg"></a>
+                        <?php echo '<a href="'.$path.'projecten/index.php"><h3>Bekijk meer projecten</h3><img src="./files/images/icon-link.svg"></a>'; ?>
                     </div>
                 </div>
                 <div class="ervaringen" id="ervaringen">

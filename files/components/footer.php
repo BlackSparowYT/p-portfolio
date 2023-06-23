@@ -1,4 +1,4 @@
-<footer>
+<footer id="contact">
 
     <?php
 
@@ -8,14 +8,15 @@
             <div class="block-1">
                 <h3>Contact</h3>
                 <p>
-                    email: <a target="_blank" href="mailto:support@remote-reizen.nl">support@remote-reizen.nl</a>
-                    <br>
-                    Telefoon: <a target="_blank" href="tel:+31632897589">+31 6 32897589</a>
+                    <a target="_blank" href="mailto:finn.r.josten@gmail.com">finn.r.josten@gmail.com</a>
+                </p>
+                <p>
+                    <a target="_blank" href="tel:+31623079536">06 23079536</a>
                 </p>
             </div>
             <div class="block-2">
-                <a href=""><img>blub</a>
-                <a href=""><img>blub</a>
+                <a target="_blank" href="https://github.com/BlackSparowYT/"><img src="'.$path.'files/images/icon-github.png"img></a>
+                <a target="_blank" href="https://github.com/BlackSparowYT/"><img src="'.$path.'files/images/icon-github.png"></a>
             </div>
         </div>';
     

@@ -19,7 +19,7 @@
                 <h2 class="t11">n</h2>
             </div>
             <div class="navbar-desktop-items">';
-            if ($page_is != "home") {
+            if ($page['name'] != "home") {
                 '<a class="t1" href="'.$path.'index.php"><h3>Home</h3></a>';
             }
             echo '    
@@ -49,7 +49,7 @@
             <div id="navbar-mobile-fullscreen" class="nav-overlay">
                 <a href="javascript:void(0)" class="closebtn t1" onclick="closeNav()">&times;</a>
                 <div class="nav-overlay-content">';
-                if ($page_is != "home") {
+                if ($page['name'] != "home") {
                     '<a class="t1" href="'.$path.'index.php"><h3>Home</h3></a>';
                 }
                 echo '    
