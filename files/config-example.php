@@ -2,18 +2,18 @@
 
     //ini_set('display_errors', 0);
 
-    // Use credentials (if false DB wont work even if true)
+    // Use credentials (If false DB wont work even if thats true)
     $use_credentials = true;
-    // Use a database
+    // Use a database (If false DB Settings wont work even if thats true)
     $use_db = true;
     // Use a secondary database
     $use_secondary_db = false;
     // Use settings in database (requires settings table)
     $use_db_settings = false;
     /*
-        Setting table must have a row called "settings", this will contain the setting name
-        It must also have a row called "value", this will contain the value for the setting
-        Its recommended to also have an ID row that auto increments
+        Setting table must have a column called "settings", this will contain the setting name
+        It must also have a column called "value", this will contain the value for the setting
+        Its recommended to also have an ID column that auto increments
     */
 
     $path_lvl[1] = './';
@@ -34,9 +34,9 @@
 
 
     // Set some settings
-    $site['url'] = 'frjosten.nl';
-    $site['name'] = 'Portfolio';
-    $site['description'] = 'Lorem Ipsu,';
+    $site['url'] = 'siteurl.com';
+    $site['name'] = 'Site name';
+    $site['description'] = 'Site description';
 
 
 
