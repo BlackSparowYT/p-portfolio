@@ -70,5 +70,14 @@
                 "title" : "Mijn werk"
             }
         }
+    ],
+    "projects-detail" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "Mijn werk"
+            }
+        }
     ]
 }
