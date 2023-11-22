@@ -1,0 +1,48 @@
+{
+    "home" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "Starting Web Developer",
+                "buttons" : [
+                    {
+                        "text" : "My work",
+                        "link" : "https://p-gokyocuijk.test/informatie/lestijden.php"
+                    },
+                    {
+                        "text" : "Get in contact",
+                        "link" : "https://p-gokyocuijk.test/contact/#locatie-link"
+                    }
+                ]
+            }
+        },
+        {
+            "id" : 2,
+            "block_name" : "text",
+            "content" : {
+                "title" : "Wat is judo?",
+                "text" : "Judo werd door Jugoro Kano (1860 1938) ontwikkeld vanuit de traditionele Japanse vechtkunst Jiu-Jitsu. Voor de pedagoog Kano was judo niet zomaar een sport. Hij beschouwde het vooral als een opvoedkundige methode.\\n\\nJudoka's trachten elkaar met een judoworp op de mat te werpen of hun tegenstander met behulp van een grondtechniek onder controle te krijgen. Een judoka gebruikt de kracht van de tegenstander om deze te overmeesteren.\\n\\nDoor judo leer je positief omgaan met agressie. Judo is bovendien beschaafd. Zonder je tegenstander te blesseren leer je hem of haar te overmeesteren."
+            }
+        },
+        {
+            "id" : 3,
+            "block_name" : "text",
+            "content" : {
+                "title" : "Judo kun je alleen maar leren door het te doen!",
+                "text" : "Judo is een sport voor iedereen!\\nVoor jong of oud en voor zowel de heren als de dames.\\nAl tienduizenden judoka's beoefenen de judosport met veel enthousiasme.\\n\\nTevens is judo ook nog eens een Olympische sport. Er zijn al meerdere Nederlanders wereld- / Europees Olympisch kampioen geworden. Een aantal judoka's zijn actief in de wedstrijdsport maar het merendeel beperkt zich tot het trainen bij de club. Recreatief bezig zijn is dus ook heel belangrijk.\\n\\nWil jij het een keer mee doen?\\nKom eens een keer langs voor een proefles! Je kan 3 proeflessen gratis volgen om te kijken of je het leuk vind. Wanneer je een les kan volgen kun je hier onder vinden.",
+                "buttons" : [
+                    {
+                        "text" : "Lestijden",
+                        "link" : "https://p-gokyocuijk.test/informatie/lestijden.php"
+                    },
+                    {
+                        "text" : "Locatie",
+                        "link" : "https://p-gokyocuijk.test/contact/#locatie-link"
+                    }
+                ]
+            }
+        }
+
+    ]
+}

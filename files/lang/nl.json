@@ -1,0 +1,66 @@
+{
+    "home" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "Beginnende Web Developer",
+                "buttons" : [
+                    {
+                        "text" : "Bekijk mijn werk",
+                        "link" : "https://[%siteUrl]/projects",
+                        "type" : "secondary"
+                    },
+                    {
+                        "text" : "Neem contact op",
+                        "link" : "https://[%siteUrl]/contact",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "id" : 2,
+            "block_name" : "text",
+            "block_title" : "Over mij",
+            "content" : {
+                "title" : "Wie ben ik op dit kleine stukje van het web?",
+                "text1" : "Welkom op mijn digitale hoekje van het web! Mijn naam is Finn, een gedreven student in softwareontwikkeling met een bijzondere focus op de intrigerende wereld van web technologie. Met ~5 jaar aan zelfgeleerde ervaring omarm ik met enthousiasme de uitdagingen van het coderen, waarbij ik me voortdurend laat inspireren door de magie van code. Mijn nieuwsgierigheid en liefde voor het vak hebben me niet alleen geholpen om de complexiteit van het programmeren te omarmen, maar stimuleren me ook om continue te leren en te groeien in deze boeiende discipline.",
+                "text2" : "\\n\\nNieuwsgierig naar mijn andere interesses? Lees meer over mij en ontdek mijn diverse wereld van hobby's op de <a class='btn btn--link' href='./over-mij'>over</a> mij pagina!",
+                "buttons" : [
+                    {
+                        "text" : "Bekijk over mij pagina",
+                        "link" : "https://[%siteUrl]/over-mij",
+                        "type" : "primary"
+                    },
+                    {
+                        "text" : "Bekijk mijn werk",
+                        "link" : "https://[%siteUrl]/projects",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        },
+        {
+            "id" : 3,
+            "block_name" : "posts",
+            "block_title" : "Projecten",
+            "content" : {
+                "title" : "Projecten & Sites die ik heb gemaakt",
+                "posts" : [
+                    1,
+                    2,
+                    3
+                ],
+                "buttons" : [
+                    {
+                        "text" : "Bekijk meer",
+                        "link" : "https://[%siteUrl]/projects",
+                        "type" : "readmore"
+                    }
+                ]
+            }
+        }
+
+    ]
+}

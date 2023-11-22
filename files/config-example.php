@@ -3,9 +3,9 @@
     //ini_set('display_errors', 0);
 
     // Use credentials (If false DB wont work even if thats true)
-    $use_credentials = true;
+    $use_credentials = false;
     // Use a database (If false DB Settings wont work even if thats true)
-    $use_db = true;
+    $use_db = false;
     // Use a secondary database
     $use_secondary_db = false;
     // Use settings in database (requires settings table)

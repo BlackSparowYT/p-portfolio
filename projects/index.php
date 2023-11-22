@@ -14,11 +14,11 @@
     
     <body class="<?=$page['name']?> page">
 
-        <?php include($path."files/components/header.php") ?>
+        <?php //include($path."files/components/header.php") ?>
 
 
         <main class="content">
-            <section class="hero hero--homepage">
+            <section class="hero hero--subpage">
                 <h1><?=$variable['siteName']?></h1>
                 <div class="btn-group">
 
@@ -30,7 +30,7 @@
             </section>
         </main>
 
-        <?php include($path."files/components/footer.php") ?>
+        <?php //include($path."files/components/footer.php") ?>
 
     </body>
 </html>
