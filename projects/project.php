@@ -1,6 +1,6 @@
 <?php
 
-    $page['name'] = "detail";
+    $page['name'] = "projects-detail";
     $page['categorie'] = "projects";
     $page['path_lvl'] = 2;
     require_once("../files/config.php");
@@ -18,10 +18,9 @@
 
 
         <main class="content">
-            <section class="hero hero--homepage">
-                <h1><?=$variable['siteName']?></h1>
-                <div class="btn-group">
-
+            <section class="hero hero--subpage">
+                <div class="container">
+                    <h1><?= get_block(1)['title'] ?></h1>
                 </div>
             </section>
 
