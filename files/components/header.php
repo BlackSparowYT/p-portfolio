@@ -14,8 +14,8 @@
             }
             echo '    
                 <a href="'.$path.'over-mij/"><h3>Over Mij</h3></a>
-                <a href="'.$path.'projects/"><h3>Projecten</h3></a>
-                <a href="#contact"><h3>Contact</h3></a>
+                <a href="'.$path.'projects/"><h3>Mijn werk</h3></a>
+                <a href="mailto:contact@frjosten.nl"><h3>Contact</h3></a>
             </div>
         </div>
         
@@ -34,8 +34,8 @@
                 }
                 echo '    
                     <a href="'.$path.'over-mij"><h3>Over Mij</h3></a>
-                    <a href="'.$path.'projects/"><h3>Projecten</h3></a>
-                    <a href="#contact"><h3>Contact</h3></a>
+                    <a href="'.$path.'projects/"><h3>Mijn werk</h3></a>
+                    <a href="mailto:contact@frjosten.nl"><h3>Contact</h3></a>
                 </div>
             </div>
         </div>';
