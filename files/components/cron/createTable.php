@@ -16,7 +16,6 @@
     $result = mysqli_fetch_assoc($is_run);
 
     $last_row['year'] = $result['date'];
-    var_dump($last_row);
 
     if ($cur_date['year'] > $last_row['year'] || $last_row['year'] == NULL) {
         echo "Adding year row";

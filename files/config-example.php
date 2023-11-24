@@ -3,11 +3,13 @@
     //ini_set('display_errors', 0);
 
     // Use credentials (If false DB wont work even if thats true)
-    $use_credentials = false;
+    $use_credentials = true;
     // Use a database (If false DB Settings wont work even if thats true)
-    $use_db = false;
+    $use_db = true;
     // Use a secondary database
     $use_secondary_db = false;
+    // Use statistics
+    $use_statistics = true;
     // Use settings in database (requires settings table)
     $use_db_settings = false;
     /*
@@ -29,6 +31,12 @@
         $path = $path_lvl[2];
     } else if ($page['path_lvl'] == 3) {
         $path = $path_lvl[3];
+    } else if ($page['path_lvl'] == 4) {
+        $path = $path_lvl[4];
+    } else if ($page['path_lvl'] == 5) {
+        $path = $path_lvl[5];
+    } else if ($page['path_lvl'] == 6) {
+        $path = $path_lvl[6];
     }
 
 
@@ -48,7 +56,6 @@
         include($path.'files/components/credentials.php');
     }
 
-
     // Link the DB
     if ($use_db && $use_credentials) {
         $link = new mysqli($db_host, $db_user, $db_password, $db_name);
@@ -57,14 +64,17 @@
         }
     }
 
-
-
-    // Link the DB
+    // Link secondary the DB
     if ($use_secondary_db && $use_credentials) { 
         $second_link = new mysqli($sec_db_host, $sec_db_user, $sec_db_password, $sec_db_name);
         if (!$second_link){
             echo "<p style='color: red;'>Secondary Connection Unsuccessful!</p>";
         }
+    }
+
+    // Do some statistic stuff
+    if ($use_credentials && $use_db && $use_statistics) {
+        include($path.'files/components/statistics.php');
     }
 
 
@@ -85,6 +95,7 @@
 
     $variable['siteName']   = $site['name'];
     $variable['siteDesc']   = $site['description'];
+    $variable['siteUrl']    = $site['url'];
     $variable['year']       = date('Y');
     $variable['month']      = date('m');
     $variable['monthName']  = date('F');
