@@ -19,26 +19,26 @@
         if (isset($_SESSION['loggedin'])) {
             $loggedin = true;
         } else {
-            header("Location: login.php");
+            header("Location: ".$path."admin/login.php");
         }
     } else if ($page['name'] == "login") {
         if (isset($_SESSION['loggedin'])) {
             $loggedin = true;
-            header("Location: ./content/dashboard.php");
+            header("Location: ".$path."admin/content/dashboard.php");
         } else {
             $loggedin = false;
         }
     } else if ($page['name'] == "register") {
         if (isset($_SESSION['loggedin'])) {
             $loggedin = true;
-            header("Location: ./content/dashboard.php");
+            header("Location: ".$path."admin/content/dashboard.php");
         } else {
             $loggedin = false;
         }
     } else if ($page['name'] == "forgot_pass") {
         if (isset($_SESSION['loggedin'])) {
             $loggedin = true;
-            header("Location: ./content/dashboard.php");
+            header("Location: ".$path."admin/content/dashboard.php");
         } else {
             $loggedin = false;
         }

@@ -191,4 +191,13 @@
     }
 
 
+
+
+
+
+    function da_number_format($input, $decimals){
+        return number_format($input, $decimals, '.', ',');
+    }
+
+
 ?>
