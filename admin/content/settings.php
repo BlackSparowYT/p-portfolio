@@ -18,9 +18,7 @@
 
         <?php include($path."files/components/account-sidebar.php") ?>
 
-        <main class="dash-page account-page">
-            <div class="dash-content">
-            </div>
+        <main class="content">
         </main>
 
     </body>
