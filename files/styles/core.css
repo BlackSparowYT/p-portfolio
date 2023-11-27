@@ -403,7 +403,7 @@ footer .block-2 a img { width: 40px; height: 40px; }
 .btn.btn--secondary { --clr: var(--text-clr); --border: 1px solid var(--bg-clr); --clr-bg: var(--bg-clr-light); }
 .btn.btn--secondary:hover { --clr: var(--text-clr); --border: 1px solid var(--accent); --clr-bg: var(--bg-clr-light); }
 .btn.btn--secondary-outline { --clr: var(--text-clr-invert); --border: 1px solid var(--accent); --clr-bg: var(--accent); }
-.btn.btn--link { --clr: var(--accent); --fw: normal; }
+.btn.btn--link { --clr: var(--accent); --fw: normal; text-decoration: underline; text-decoration-color: var(--accent); }
 
 
 
@@ -471,3 +471,94 @@ footer .block-2 a img { width: 40px; height: 40px; }
 .card.card--posts:hover .text { border: 1px solid var(--accent); }
 .card.card--posts:hover .text .title { padding-bottom: 3px; }
 .card.card--posts:hover .text .title::after { padding-bottom: 2px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** Acount page **/
+
+html:has(.page--account) { background-color: var(--bg-clr-dark); }
+.page--account { display: grid; grid-template-columns: 250px auto; gap: 15px; }
+
+
+
+/** Account Sidebar **/
+
+.page--account nav { height: 100vh; width: 250px; position: fixed; top: 0; left: 0; background-color: var(--bg-clr); }
+
+.page--account nav .user-group { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 15px; width: 220px; margin: 30px auto; }
+.page--account nav .user-group .popup__inner { transition: opacity .3s; opacity: 0; pointer-events: none; position: absolute; top: 100%; left: 0; z-index: 100; }
+.page--account nav .user-group .popup__inner .link { background-color: var(--bg-clr-light); display: flex; align-items: center; justify-content: left; width: 220px; padding: 10px 15px; gap: 10px; border-radius: 10px; transition: opacity .3s; box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.75); }
+.page--account nav .user-group:hover .popup__inner { opacity: 1; pointer-events: all; }
+
+.page--account nav .link-group .link { display: flex; align-items: center; justify-content: left; width: 220px; padding: 10px 15px; gap: 10px; border-radius: 10px; margin: 10px auto; opacity: .7; transition: opacity .3s; }
+.page--account nav .link-group .link:hover { opacity: 1; }
+.page--account nav .link-group .link.active { background-color: var(--bg-clr-light); opacity: 1; }
+
+.page--account nav .da-icon { --clr: var(--accent); }
+.page--account nav p { --fs: 18px; }
+
+
+
+/** Account Sidebar **/
+
+.page--account .content {
+    height: 100vh;
+    row-gap: 15px;
+
+    --gc: 1;
+    --gr: 4;
+
+    display: grid;
+    grid-template-columns: repeat(var(--gc), minmax(0,1fr));
+    grid-template-rows: repeat(var(--gr), minmax(0,1fr));
+}
+
+.page--account .content .row {
+    --gc: 4;
+    column-gap: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(var(--gc), minmax(0,1fr));
+}
+
+.page--account .content .row .col {
+    background-color: var(--bg-clr);
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+}
+
+.page--account .content .chart {
+    height: 400px;
+    width: 1000px;
+    position: relative;
+    aspect-ratio: unset !important;
+}
+
+
+
+.page--account .row.span--2 { grid-row: span 2; }
+
+.page--account .col.span--2 { grid-column: span 2; }
+.page--account .col.span--3 { grid-column: span 3; }
+.page--account .col.span--4 { grid-column: span 4; border-radius: 10px 0 0 10px !important; }
+.page--account .content .row:first-child .col { border-radius: 0 0 10px 10px !important; }
+.page--account .content .row:first-child .col:last-child { border-radius: 0 0 0 10px !important; }
+.page--account .content .row:last-child .col { border-radius: 10px 10px 0 0 !important; }
+.page--account .content .row:last-child .col:last-child { border-radius: 10px 0 0 0 !important; }

@@ -1,0 +1,28 @@
+<?php
+
+    $page['name'] = "analytics";
+    $page['cat'] = "account";
+    $page['path_lvl'] = 3;
+    require_once("../../files/components/account-setting.php");
+
+    // Get the username from the session
+    $username = $_SESSION['name'];
+
+?>
+<!DOCTYPE html>
+<html lang="<?= $_COOKIE['site_lang'] ?>">
+
+    <?php include($path."files/components/head.php") ?>
+    
+    <body class="<?=$page['name']?> page page--account">
+
+        <?php include($path."files/components/account-sidebar.php") ?>
+
+        <main class="dash-page account-page">
+            <div class="dash-content">
+            </div>
+        </main>
+
+    </body>
+
+</html>
