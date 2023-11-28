@@ -5,10 +5,8 @@
             <p><?php echo $username; ?></p>
             <i class="da-icon da-icon--ellipsis-vertical"></i>
             <div class="popup__inner">
-                <a class="link" href="<?= $path ?>admin/logout.php">
-                    <i class="da-icon da-icon--right-from-bracket"></i>
-                    <p>Logout</p>
-                </a>
+                <a class="link" href="<?= $path ?>admin/logout.php"><i class="da-icon da-icon--right-from-bracket"></i><p>Logout</p></a>
+                <a class="link" href="<?= $path ?>"><i class="da-icon da-icon--house"></i><p>Home page</p></a>
             </div>
         </div>
         <div class="link-group">
@@ -20,7 +18,7 @@
                 <i class="da-icon da-icon--chart-simple"></i>
                 <p>Analytics</p>
             </a>
-            <a class="link <?php if($page['name']=="projects") { echo 'active';} ?>" href="<?= $path ?>admin/content/projects.php">
+            <a class="link <?php if($page['name']=="projects" || $page['name']=="view") { echo 'active';} ?>" href="<?= $path ?>admin/content/projects.php">
                 <i class="da-icon da-icon--diagram-project"></i>
                 <p>Projects</p>
             </a>
