@@ -1,7 +1,7 @@
 <?php
 
     $page['name'] = "forgot_pass";
-    $page['cat'] = "account";
+    $page['category'] = "account";
     $page['path_lvl'] = 2;
     require_once("../files/components/account-setting.php");
 

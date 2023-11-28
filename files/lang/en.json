@@ -4,15 +4,17 @@
             "id" : 1,
             "block_name" : "hero",
             "content" : {
-                "title" : "Starting Web Developer",
+                "title" : "Beginnende Web Developer",
                 "buttons" : [
                     {
-                        "text" : "My work",
-                        "link" : "https://p-gokyocuijk.test/informatie/lestijden.php"
+                        "text" : "Bekijk mijn werk",
+                        "link" : "https://[%siteUrl]/projects",
+                        "type" : "secondary"
                     },
                     {
-                        "text" : "Get in contact",
-                        "link" : "https://p-gokyocuijk.test/contact/#locatie-link"
+                        "text" : "Neem contact op",
+                        "link" : "https://[%siteUrl]/contact",
+                        "type" : "secondary"
                     }
                 ]
             }
@@ -20,29 +22,84 @@
         {
             "id" : 2,
             "block_name" : "text",
+            "block_title" : "Over mij",
             "content" : {
-                "title" : "Wat is judo?",
-                "text" : "Judo werd door Jugoro Kano (1860 1938) ontwikkeld vanuit de traditionele Japanse vechtkunst Jiu-Jitsu. Voor de pedagoog Kano was judo niet zomaar een sport. Hij beschouwde het vooral als een opvoedkundige methode.\\n\\nJudoka's trachten elkaar met een judoworp op de mat te werpen of hun tegenstander met behulp van een grondtechniek onder controle te krijgen. Een judoka gebruikt de kracht van de tegenstander om deze te overmeesteren.\\n\\nDoor judo leer je positief omgaan met agressie. Judo is bovendien beschaafd. Zonder je tegenstander te blesseren leer je hem of haar te overmeesteren."
+                "title" : "Wie ben ik op dit kleine stukje van het web?",
+                "text1" : "Welkom op mijn digitale hoekje van het web! Mijn naam is Finn, een gedreven student in softwareontwikkeling met een bijzondere focus op de intrigerende wereld van web technologie. Met ~5 jaar aan zelfgeleerde ervaring omarm ik met enthousiasme de uitdagingen van het coderen, waarbij ik me voortdurend laat inspireren door de magie van code. Mijn nieuwsgierigheid en liefde voor het vak hebben me niet alleen geholpen om de complexiteit van het programmeren te omarmen, maar stimuleren me ook om continue te leren en te groeien in deze boeiende discipline.",
+                "text2" : "\\n\\nNieuwsgierig naar mijn andere interesses? Lees meer over mij en ontdek mijn diverse wereld van hobby's op de <a class='btn btn--link' href='./over-mij'>over mij</a> pagina!",
+                "buttons" : [
+                    {
+                        "text" : "Bekijk over mij pagina",
+                        "link" : "https://[%siteUrl]/over-mij",
+                        "type" : "primary"
+                    },
+                    {
+                        "text" : "Bekijk mijn werk",
+                        "link" : "https://[%siteUrl]/projects",
+                        "type" : "secondary"
+                    }
+                ]
             }
         },
         {
             "id" : 3,
-            "block_name" : "text",
+            "block_name" : "posts",
+            "block_title" : "Projecten",
             "content" : {
-                "title" : "Judo kun je alleen maar leren door het te doen!",
-                "text" : "Judo is een sport voor iedereen!\\nVoor jong of oud en voor zowel de heren als de dames.\\nAl tienduizenden judoka's beoefenen de judosport met veel enthousiasme.\\n\\nTevens is judo ook nog eens een Olympische sport. Er zijn al meerdere Nederlanders wereld- / Europees Olympisch kampioen geworden. Een aantal judoka's zijn actief in de wedstrijdsport maar het merendeel beperkt zich tot het trainen bij de club. Recreatief bezig zijn is dus ook heel belangrijk.\\n\\nWil jij het een keer mee doen?\\nKom eens een keer langs voor een proefles! Je kan 3 proeflessen gratis volgen om te kijken of je het leuk vind. Wanneer je een les kan volgen kun je hier onder vinden.",
+                "title" : "Projecten & Sites die ik heb gemaakt",
+                "posts" : [
+                    1,
+                    2,
+                    3
+                ],
                 "buttons" : [
                     {
-                        "text" : "Lestijden",
-                        "link" : "https://p-gokyocuijk.test/informatie/lestijden.php"
-                    },
-                    {
-                        "text" : "Locatie",
-                        "link" : "https://p-gokyocuijk.test/contact/#locatie-link"
+                        "text" : "Bekijk meer",
+                        "link" : "https://[%siteUrl]/projects",
+                        "type" : "readmore"
                     }
                 ]
             }
         }
-
+    ],
+    "projects" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "Mijn werk"
+            }
+        }
+    ],
+    "projects-detail" : [
+        {
+            "id" : 1,
+            "block_name" : "project",
+            "block_title" : "Het project",
+            "content" : {
+                "title" : "Over het project"
+            }
+        },
+        {
+            "id" : 2,
+            "block_name" : "skills",
+            "block_title" : "Skills",
+            "content" : {
+                "title" : "Skills die gebruikt zijn voor dit project"
+            }
+        },
+        {
+            "id" : 3,
+            "block_name" : "posts",
+            "block_title" : "Projecten",
+            "content" : {
+                "title" : "Meer zoals dit",
+                "posts" : [
+                    1,
+                    2,
+                    3
+                ]
+            }
+        }
     ]
 }

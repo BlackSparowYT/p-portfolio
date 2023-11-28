@@ -1,9 +1,19 @@
 <?php
 
     $page['name'] = "projects-detail";
-    $page['categorie'] = "projects";
+    $page['category'] = "projects";
     $page['path_lvl'] = 2;
     require_once("../files/config.php");
+
+    require_once("../files/components/Parsedown/Parsedown.php");
+    $Parsedown = new Parsedown();
+    $Parsedown->setBreaksEnabled(true);
+
+    if(isset($_GET['id']) && $_GET['id']) {
+        $id = $_GET['id'];
+    } else {
+        header("Location: ./index.php");
+    }
 
 ?>
 
@@ -14,7 +24,7 @@
     
     <body class="<?=$page['name']?> page">
 
-        <?php //include($path."files/components/header.php") ?>
+        <?php include($path."files/components/header.php") ?>
 
 
         <main class="content">
@@ -24,8 +34,94 @@
                 </div>
             </section>
 
-            <section class="container">
-                <!-- Your content here! -->
+            <section class="block text bg--dark wst--medium wsb--medium">
+                <div class="container">
+                    <div class="block__name">
+                        <i class="da-icon  da-icon--custom-dot"></i>
+                        <p><?= get_block_title(1) ?></p>
+                    </div>
+                    <h2><?= get_block(1)['title'] ?></h2>
+                    <?php
+                        $stmt = $link->prepare("SELECT content,image FROM `projects` WHERE id = ?");
+                        $stmt->bind_param("i", $id);
+                        
+                        if ($stmt->execute()) {
+                            $is_run = $stmt->get_result();
+                            $result = mysqli_fetch_assoc($is_run);
+                        ?>
+
+                            <div class="text">
+                                <?= $Parsedown->text(json_decode($result['content'], true)[0]) ?>
+                                <img src="<?= $path ?>files/images/posts/<?= $result['image'] ?>">
+                            </div>
+                            <div class="text">
+                                <?= $Parsedown->text(json_decode($result['content'], true)[1]) ?>
+                            </div>
+
+                        <?php
+                        } else { echo "Error in execution!"; }
+                    ?> 
+
+                </div>
+            </section>
+            <section class="block skills wst--medium wsb--medium">
+                <div class="container">
+                    <div class="block__name">
+                        <i class="da-icon  da-icon--custom-dot"></i>
+                        <p><?= get_block_title(2) ?></p>
+                    </div>
+                    <h2><?= get_block(2)['title'] ?></h2>
+                    <div class="grid gc--4">
+                        <?php
+                            $stmt = $link->prepare("SELECT skills FROM `projects` WHERE id = ?");
+                            $stmt->bind_param("i", $id);
+
+                            if ($stmt->execute()) {
+                                $is_run = $stmt->get_result();
+                                $result = mysqli_fetch_assoc($is_run);
+
+                                foreach (json_decode($result['skills']) as $skill) {
+                            ?>
+
+                                <p class="card card--skills">
+                                    <?= $skill ?>
+                                </p>
+
+                            <?php
+                            }} else { echo "Error in execution!"; }
+                        ?> 
+                    </div>
+                </div>
+            </section>
+            <section class="block posts wst--medium wsb--medium bg--normal">
+                <div class="container">
+                    <div class="block__name">
+                        <i class="da-icon  da-icon--custom-dot"></i>
+                        <p><?= get_block_title(3) ?></p>
+                    </div>
+                    <h2><?= get_block(3)['title'] ?></h2>
+                    <div class="posts__grid posts__grid--3">
+                        <?php
+
+                            $stmt = $link->prepare("SELECT * FROM `projects` ORDER BY id DESC LIMIT 3");
+
+                            if ($stmt->execute()) {
+                                $is_run = $stmt->get_result();
+                                while ($result = mysqli_fetch_assoc($is_run)) { ?>
+
+                                    <a class="card card--posts" href='<?= $path ?>projecten/project.php?id=<?= $result['id'] ?>'>
+                                        <img src='<?= $path."files/images/posts/".$result['image']?>' />
+                                        <div class="text">
+                                            <p class="title"><?= $result['name'] ?></p>
+                                            <p class="excerpt"><?= $result['excerpt'] ?></p>
+                                        </div>
+                                    </a>
+                                <?php }
+                            } else { echo "<h2>Er is iets fout gegaan! Probeer het later opnieuw.</h2>"; }
+
+                        ?>
+                    </div>
+                </div>
             </section>
         </main>
 
@@ -37,23 +133,4 @@
 
 
 <!-- <div>
-    <?php
-        require_once("../config.php");
-
-        $urlid = $_GET["id"];
-        $stmt = $link->prepare("SELECT * FROM `projects` WHERE id = ?");
-        $stmt->bind_param("i", $urlid);
-        
-        if ($stmt->execute()) {
-            $is_run = $stmt->get_result();
-            while ($result = mysqli_fetch_assoc($is_run)) {
-                echo "<div class='projects-flex-box'>";
-                echo "<img src='".$result['image']."' />";
-                echo "<h2>".$result['name']."</h2>";
-                echo "<p class='desc'>".$result['large-desc']."</p>";
-                echo "<p class='bttns'>".$result['buttons']."</p>";
-                echo "</div>";
-            }
-        } else { echo "Error in execution!"; }
-    ?> 
 </div> -->

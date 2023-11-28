@@ -74,9 +74,31 @@
     "projects-detail" : [
         {
             "id" : 1,
-            "block_name" : "hero",
+            "block_name" : "project",
+            "block_title" : "Het project",
             "content" : {
-                "title" : "Mijn werk"
+                "title" : "Over het project"
+            }
+        },
+        {
+            "id" : 2,
+            "block_name" : "skills",
+            "block_title" : "Skills",
+            "content" : {
+                "title" : "Skills die gebruikt zijn voor dit project"
+            }
+        },
+        {
+            "id" : 3,
+            "block_name" : "posts",
+            "block_title" : "Projecten",
+            "content" : {
+                "title" : "Meer zoals dit",
+                "posts" : [
+                    1,
+                    2,
+                    3
+                ]
             }
         }
     ]

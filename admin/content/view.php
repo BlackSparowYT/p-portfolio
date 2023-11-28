@@ -1,25 +1,20 @@
 <?php
 
     $page['name'] = "view";
-    $page['cat'] = "account";
+    $page['category'] = "account";
     $page['path_lvl'] = 3;
     require_once("../../files/components/account-setting.php");
 
-    /* $Parsedown = new Parsedown();
-    $Parsedown->setSafeMode(true);
-    $Parsedown->setBreaksEnabled(true);
-    $Parsedown->setMarkupEscaped(true); */
-
     // Get the username from the session
     $username = $_SESSION['name'];
-    if (isset($_GET['mode'])) { $mode = $_GET['mode']; }
+    if (isset($_GET['mode']) && $_GET['mode']) { $mode = $_GET['mode']; }
     else { header("Location: ".$_SERVER['HTTP_REFERER']); }
 
-    if (isset($_GET['type'])) { $type = $_GET['type']; }
+    if (isset($_GET['type']) && $_GET['type']) { $type = $_GET['type']; }
     else if ($mode == "delete") { $type = null; }
     else { header("Location: ".$_SERVER['HTTP_REFERER']); }
 
-    if (isset($_GET['id'])) { $id = $_GET['id']; } 
+    if (isset($_GET['id']) && $_GET['id']) { $id = $_GET['id']; } 
     else if ($mode == "add") { $id = null; }
     else { header("Location: ".$_SERVER['HTTP_REFERER']); }
 
@@ -30,11 +25,22 @@
     if (isset($_POST['project_edit'])) {
         $name = $_POST['name'];
         $excerpt = $_POST['excerpt'];
-        $content = $_POST['content'];
+        $content = json_encode(array($_POST['content1'], $_POST['content2']));
         $tags = $_POST['tags'];
+        $skills = $_POST['skills'];
 
-        $stmt = $link->prepare("UPDATE `projects` SET `name`=?, `excerpt`=?,`content`=?,`tags`=? WHERE id = ?");
-        $stmt->bind_param("ssssi", $name, $excerpt, $content, $tags, $id);
+        $stmt = $link->prepare("UPDATE `projects` SET `name`=?, `excerpt`=?,`content`=?,`tags`=?, `skills`=? WHERE id = ?");
+        $stmt->bind_param("sssssi", $name, $excerpt, $content, $tags, $skills, $id);
+        $stmt->execute();
+    } else if (isset($_POST['project_add'])) {
+        $name = $_POST['name'];
+        $excerpt = $_POST['excerpt'];
+        $content = json_encode(array($_POST['content1'], $_POST['content2']));
+        $tags = $_POST['tags'];
+        $skills = $_POST['skills'];
+
+        $stmt = $link->prepare("INSERT INTO `projects` SET `name`=?, `excerpt`=?,`content`=?,`tags`=?, `skills`=?");
+        $stmt->bind_param("sssssi", $name, $excerpt, $content, $tags, $skills, $id);
         $stmt->execute();
     } else if (isset($_POST['delete'])) {
         $stmt = $link->prepare("DELETE FROM `projects` WHERE id = ?");
@@ -75,18 +81,32 @@
                                     <input name="name" value="<?= $result['name'] ?>">
                                 </div>
                                 <div class="form__box">
+                                    <h3>Excerpt</h3>
+                                    <textarea name="excerpt"><?= $result['excerpt'] ?></textarea>
+                                </div>
+                                <div class="form__box">
                                     <div class="col">
-                                        <h3>Excerpt</h3>
-                                        <textarea name="excerpt"><?= $result['excerpt'] ?></textarea>
+                                        <h3>Content Block</h3>
+                                        <textarea name="content1"><?= json_decode($result['content'])[0] ?></textarea>
                                     </div>
                                     <div class="col">
-                                        <h3>Content</h3>
-                                        <textarea name="content"><?= $result['content'] ?></textarea>
+                                        <h3>Image</h3>
+                                        <input type="file" name="image">
                                     </div>
                                 </div>
                                 <div class="form__box">
-                                    <h3>Content</h3>
-                                    <textarea name="tags"><?= $result['tags'] ?></textarea>
+                                    <h3>Content Block</h3>
+                                    <textarea name="content2"><?= json_decode($result['content'])[1] ?></textarea>
+                                </div>
+                                <div class="form__box">
+                                    <div class="col">
+                                        <h3>Tags</h3>
+                                        <textarea name="tags"><?= $result['tags'] ?></textarea>
+                                    </div>
+                                    <div class="col">
+                                        <h3>Skills</h3>
+                                        <textarea name="skills"><?= $result['skills'] ?></textarea>
+                                    </div>
                                 </div>
                                 <div class="form__box">
                                     <input type="submit" name="project_edit" class="btn btn--primary btn--small" value="Save">
@@ -94,15 +114,50 @@
 
                             <?php } else { echo "Error in execution!"; }
                         ?>
-                    <?php elseif ($type == "????") : ?>
-    
                     <?php endif; ?>
                 <?php elseif ($mode == "delete") : ?>
-
                     <div class="form__box">
                         <h3>Are you sure you want to delete this item?</h3>
                         <input type="submit" name="delete" class="btn btn--danger btn--small" value="Yes, delete it!">
                     </div>
+                <?php elseif ($mode == "add") : ?>
+                    <?php if($type == "project") : ?>
+                        <div class="form__box">
+                            <h3>Project title</h3>
+                            <input name="name">
+                        </div>
+                        <div class="form__box">
+                            <h3>Excerpt</h3>
+                            <textarea name="excerpt"></textarea>
+                        </div>
+                        <div class="form__box">
+                            <div class="col">
+                                <h3>Content Block</h3>
+                                <textarea name="content1"></textarea>
+                            </div>
+                            <div class="col">
+                                <h3>Image</h3>
+                                <input type="file" name="image">
+                            </div>
+                        </div>
+                        <div class="form__box">
+                            <h3>Content Block</h3>
+                            <textarea name="content2"></textarea>
+                        </div>
+                        <div class="form__box">
+                            <div class="col">
+                                <h3>Tags</h3>
+                                <textarea name="tags"></textarea>
+                            </div>
+                            <div class="col">
+                                <h3>Skills</h3>
+                                <textarea name="skills"></textarea>
+                            </div>
+                        </div>
+                        <div class="form__box">
+                            <input type="submit" name="project_add" class="btn btn--primary btn--small" value="Save">
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
 
             </form>

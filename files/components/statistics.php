@@ -1,6 +1,6 @@
 <?php
 
-    if ($page['cat'] != "account" && $page['cat'] != "admin" && $page['name'] != 'login' && $page['name'] != 'register') {
+    if ($page['category'] != "account" && $page['category'] != "admin" && $page['name'] != 'login' && $page['name'] != 'register') {
         if (isset($_COOKIE['visitor_log'])) {
             setcookie('visitor_log', 'true', time() + (60 * 20), "/");
         } else {

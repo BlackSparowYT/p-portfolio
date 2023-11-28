@@ -1,7 +1,7 @@
 <?php
 
     $page['name'] = "projects";
-    $page['cat'] = "account";
+    $page['category'] = "account";
     $page['path_lvl'] = 3;
     require_once("../../files/components/account-setting.php");
 
