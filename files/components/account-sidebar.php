@@ -11,19 +11,19 @@
         </div>
         <div class="link-group">
             <a class="link <?php if($page['name']=="dashboard") { echo 'active';} ?>" href="<?= $path ?>admin/content/dashboard.php">
-                <i class="da-icon da-icon--house"></i>
+                <i class="da-icon da-icon--browsers"></i>
                 <p>Overview</p>
             </a>
             <a class="link <?php if($page['name']=="analytics") { echo 'active';} ?>" href="<?= $path ?>admin/content/analytics.php">
-                <i class="da-icon da-icon--chart-simple"></i>
+                <i class="da-icon da-icon--chart-column"></i>
                 <p>Analytics</p>
             </a>
             <a class="link <?php if($page['name']=="projects" || $page['name']=="view") { echo 'active';} ?>" href="<?= $path ?>admin/content/projects.php">
-                <i class="da-icon da-icon--diagram-project"></i>
+                <i class="da-icon da-icon--folders"></i>
                 <p>Projects</p>
             </a>
             <a class="link <?php if($page['name']=="settings") { echo 'active';} ?>" href="<?= $path ?>admin/content/settings.php">
-                <i class="da-icon da-icon--gear"></i>
+                <i class="da-icon da-icon--wrench"></i>
                 <p>Settings</p>
             </a>
         </div>

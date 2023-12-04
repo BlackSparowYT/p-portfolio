@@ -45,6 +45,7 @@ $username = $_SESSION['name'];
                             $is_run = $stmt->get_result();
                             $result = mysqli_fetch_assoc($is_run);
                             $lastMonth = $result['count'];
+                            echo "<p style='display: none'>last month $lastMonth</p>";
                             $rate = round($thisMonth / $lastMonth * 100 - 100);
                             if ($rate > 0) {
                                 echo "<i class='da-icon da-icon--arrow-trend-up da-icon--accent'></i><p>+";
@@ -81,6 +82,7 @@ $username = $_SESSION['name'];
                             $is_run = $stmt->get_result();
                             $result = mysqli_fetch_assoc($is_run);
                             $lastYear = $result['count'];
+                            echo "<p style='display: none'>last year $lastYear</p>";
                             $rate = round($thisYear / $lastYear * 100 - 100);
                             if ($rate > 0) {
                                 echo "<i class='da-icon da-icon--arrow-trend-up da-icon--accent'></i><p>+";

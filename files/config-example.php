@@ -1,15 +1,15 @@
 <?php
 
     //ini_set('display_errors', 0);
-
+    
     // Use credentials (If false DB wont work even if thats true)
-    $use_credentials = true;
+    $use_credentials = false;
     // Use a database (If false DB Settings wont work even if thats true)
-    $use_db = true;
+    $use_db = false;
     // Use a secondary database
     $use_secondary_db = false;
     // Use statistics
-    $use_statistics = true;
+    $use_statistics = false;
     // Use settings in database (requires settings table)
     $use_db_settings = false;
     /*
@@ -18,12 +18,23 @@
         Its recommended to also have an ID column that auto increments
     */
 
+    // Settings for site
+    $settings['can_register'] = true;
+    $settings['can_reset_name'] = true;
+    $settings['can_reset_email'] = true;
+    $settings['can_reset_password'] = true;
+
+    // Base paths
     $path_lvl[1] = './';
     $path_lvl[2] = '../';
     $path_lvl[3] = '../../';
     $path_lvl[4] = '../../../';
     $path_lvl[5] = '../../../../';
     $path_lvl[6] = '../../../../../';
+
+    if(!$page['path_lvl']) {
+        $page['path_lvl'] = 2;
+    }
 
     if ($page['path_lvl'] == 1) {
         $path = $path_lvl[1];
