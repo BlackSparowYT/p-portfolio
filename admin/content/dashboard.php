@@ -106,6 +106,8 @@ $username = $_SESSION['name'];
                     <canvas id="chartVisitors" class="chart__inner"></canvas>
                     <?php $monthCount = 12; ?>
                     <script>
+                        var ctx = document.getElementById('chartVisitors').getContext('2d');
+
                         const xValues = [<?php for ($i = $monthCount - 1; $i >= 0; $i--) { echo "'" . date('F', strtotime($i . ' months ago')) . "',"; } ?>];
                         const yValues = [<?php
                             for ($i = $monthCount - 1; $i >= 0; $i--) {
@@ -122,7 +124,7 @@ $username = $_SESSION['name'];
                             }
                         ?>];
 
-                        new Chart("chartVisitors", {
+                        var chartVisitors = new Chart(ctx, {
                             type: "line",
                             data: {
                                 labels: xValues,
@@ -140,16 +142,16 @@ $username = $_SESSION['name'];
                                 maintainAspectRatio: false,
                                 scales: {
                                     x: [{
-                                        ticks: {
-                                            color: "#ffffff"
+                                        gridLines: {
+                                            display: false // Hide x-axis grid lines
                                         }
                                     }],
                                     y: [{
-                                        ticks: {
-                                            color: "#ffffff"
+                                        gridLines: {
+                                            display: false // Hide y-axis grid lines
                                         }
                                     }]
-                                },
+                                }
                             }
                         });
                     </script>
