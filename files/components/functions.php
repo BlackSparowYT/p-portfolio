@@ -5,15 +5,6 @@
         echo '<img class="'.$class.'" src="'.$path.'files/images/'.$src.'">';
     }
 
-    /* function icon($src, $class) {
-        global $path;
-        echo '<img class="'.$class.'" src="'.$path.'files/icons/'.$src.'">';
-    }
-
-    function ext_icon($src, $class) {
-        echo '<img class="'.$class.'" src="'.$src.'">';
-    } */
-
     function logo($src, $class) {
         global $path;
         echo '<img class="'.$class.'" src="'.$path.'files/logos/'.$src.'">';
@@ -30,12 +21,14 @@
 
     function script($src) {
         global $path;
-        echo '<script src="'.$path.'files/scripts/'.$src.'"></script>';
+        echo '<script src="'.$path.'files/js/'.$src.'"></script>';
     }
 
     function map($url) {
         echo '<iframe width="100%" height="100%" frameborder="0" src="'.$url.'"></iframe>';
     }
+
+
 
     function getByID($array, $id) {
         $return = "unknown";
@@ -83,7 +76,7 @@
                             $i++;
                         }
                     }
-                    return replace_nline($value['content']);
+                    return replace_variables(replace_nline($value['content']));
                 }
             }
         }
@@ -97,7 +90,7 @@
                             $i++;
                         }
                     }
-                    return replace_nline($value['content']);
+                    return replace_variables(replace_nline($value['content']));
                 }
             }
         }
@@ -157,9 +150,9 @@
         $location = strtoupper(get_user_location());
 
         if ($location == 'NL') {
-            setcookie('site_lang', 'NL', time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
+            setcookie('site_lang', 'NL', time() + (86400 * 30), "/"); // 86400 = 1 day * 30 (1 month)
         } else {
-            setcookie('site_lang', 'EN', time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
+            setcookie('site_lang', 'EN', time() + (86400 * 30), "/"); // 86400 = 1 day * 30 (1 month)
         }
 
         header("Refresh:0");
