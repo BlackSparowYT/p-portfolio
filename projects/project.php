@@ -3,6 +3,7 @@
     $page['name'] = "projects-detail";
     $page['category'] = "projects";
     $page['path_lvl'] = 2;
+    $page['custom_title']['flag'] = true;
     require_once("../files/config.php");
 
     require_once("../files/components/Parsedown/Parsedown.php");
@@ -14,6 +15,10 @@
     } else {
         header("Location: ./index.php");
     }
+
+    $page['custom_title']['seperator'] = '|';
+    $page['custom_title']['part1'] = 'Project ' . $id;
+    $page['custom_title']['part2'] = 'Portfolio';
 
 ?>
 

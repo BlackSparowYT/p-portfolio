@@ -112,7 +112,7 @@
     }
 
 
-    function get_page_title($sep = null) {
+    function get_page_title($sep = null, $part1 = null, $part2 = null) {
         global $page;
         global $site;
 
@@ -125,7 +125,15 @@
 
         if (str_contains($page_name, '-')) { $page_name = str_replace('-',' ', $page_name); }
 
-        return '<title>' . $page_name . ' '. $sep .' ' . $site_name . '</title>';
+        
+        $title = '<title>';
+        if ($part1) { $title .= $part1 . ' '. $sep .' '; }
+        else { $title .= $page_name . ' '. $sep .' '; }
+
+        if ($part2) { $title .= $part2 . '</title>'; }
+        else { $title .= $site_name . '</title>'; }
+
+        return $title;
 
     }
 
