@@ -2,7 +2,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?= get_page_title() ?>
+    <?php
+        if (!$page['custom_title']) { echo get_page_title(); }
+        else { echo get_page_title('|', 'Project '.$id); }
+    ?>
     <?php echo '<link rel="stylesheet" href="' . $path . 'files/styles/core.css">' ?>
     <?php echo '<link rel="icon" type="image/x-icon" href="' . $path . 'files/logos/favicon.png">' ?>
 

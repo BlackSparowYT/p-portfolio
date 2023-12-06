@@ -3,6 +3,7 @@
     $page['name'] = "projects-detail";
     $page['category'] = "projects";
     $page['path_lvl'] = 2;
+    $page['custom_title'] = true;
     require_once("../files/config.php");
 
     require_once("../files/components/Parsedown/Parsedown.php");
