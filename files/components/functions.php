@@ -76,7 +76,7 @@
                             $i++;
                         }
                     }
-                    return replace_variables(replace_nline($value['content']));
+                    return replace_nline($value['content']); //replace_variables(replace_nline($value['content']));
                 }
             }
         }
@@ -90,7 +90,7 @@
                             $i++;
                         }
                     }
-                    return replace_variables(replace_nline($value['content']));
+                    return replace_nline($value['content']); //replace_variables(replace_nline($value['content']));
                 }
             }
         }
