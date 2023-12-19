@@ -7,7 +7,6 @@
         else { echo get_page_title($page['custom_title']['seperator'], $page['custom_title']['part1'], $page['custom_title']['part2']); }
         // Note that part1, part2 and the seperator are required to be set
     ?>
-
     <?php echo '<link rel="stylesheet" href="' . $path . 'files/styles/core.css">' ?>
     <?php echo '<link rel="icon" type="image/x-icon" href="' . $path . 'files/logos/favicon.png">' ?>
 
