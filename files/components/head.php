@@ -7,6 +7,12 @@
         else { echo get_page_title($page['custom_title']['seperator'], $page['custom_title']['part1'], $page['custom_title']['part2']); }
         // Note that part1, part2 and the seperator are required to be set
     ?>
+    <?php
+        if (!$page['custom_meta'] || !isset($page['custom_meta'])) { echo set_page_meta(); }
+        else { echo set_page_meta($page['custom_meta']); }
+    ?>
+    <?php set_social_meta() ?>
+
     <?php echo '<link rel="stylesheet" href="' . $path . 'files/styles/core.css">' ?>
     <?php echo '<link rel="icon" type="image/x-icon" href="' . $path . 'files/logos/favicon.png">' ?>
 

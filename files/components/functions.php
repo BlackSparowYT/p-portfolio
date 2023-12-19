@@ -112,6 +112,41 @@
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+    function set_page_meta($custom = null) {
+        if ($custom) {
+            echo "<meta name='description' content='$custom'>";
+        } else {
+            echo "<meta name='description' content='Beginnende webdevelopment student met focus op frontend. Ontdek mijn creatieve reis in code, design en avontuur'>";
+        }
+    }
+
+    function set_social_meta() {
+        echo '
+            <meta property="og:title" content="FR Jostens Portfolio">
+            <meta property="og:description" content="Webdevelopment student met focus op frontend. Ontdek mijn creatieve reis in code, design en avontuur">
+            <!--<meta property="og:image" content="https://your-website.com/og-image.png">-->
+            <meta property="og:url" content="https://frjosten.nl/">
+
+            <meta name="twitter:title" content="Add title here">
+            <meta name="twitter:description" content="Webdevelopment student met focus op frontend. Ontdek mijn creatieve reis in code, design en avontuur">
+            <!--<meta name="twitter:url" content="https://your-website.com/twitter-image.png">-->
+            <meta name="twitter:card" content="summary">
+
+        ';
+    }
+
+
     function get_page_title($sep = null, $part1 = null, $part2 = null) {
         global $page;
         global $site;

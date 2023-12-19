@@ -64,7 +64,7 @@
                                 while ($result = mysqli_fetch_assoc($is_run)) { ?>
 
                                     <a class="card card--posts" href='<?= $path ?>projecten/project.php?id=<?= $result['id'] ?>'>
-                                        <img src='<?= $path."files/images/posts/".$result['image']?>' />
+                                        <img src='<?= $path."files/images/posts/".$result['image']?>' alt="image" />
                                         <div class="text">
                                             <p class="title"><?= $result['name'] ?></p>
                                             <p class="excerpt"><?= $result['excerpt'] ?></p>

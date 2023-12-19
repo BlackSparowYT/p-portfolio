@@ -45,7 +45,7 @@
                                         </div>
                                         <p><?= $result['excerpt'] ?></p>
                                     </div>
-                                    <img src='<?= $path ?>files/images/posts/<?= $result['image'] ?>'/>
+                                    <img src='<?= $path ?>files/images/posts/<?= $result['image'] ?>' alt="image"/>
                                 </a>
                             <?php }
                         } else { echo "Error in execution!"; }
