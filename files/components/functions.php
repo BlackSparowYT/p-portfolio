@@ -190,12 +190,12 @@
             return;
         }
 
-        $location = strtoupper(get_user_location());
+        $location = strtolower(get_user_location());
 
-        if ($location == 'NL') {
-            setcookie('site_lang', 'NL', time() + (86400 * 30), "/"); // 86400 = 1 day * 30 (1 month)
+        if ($location == 'nl') {
+            setcookie('site_lang', 'nl', time() + (86400 * 30), "/"); // 86400 = 1 day * 30 (1 month)
         } else {
-            setcookie('site_lang', 'EN', time() + (86400 * 30), "/"); // 86400 = 1 day * 30 (1 month)
+            setcookie('site_lang', 'en', time() + (86400 * 30), "/"); // 86400 = 1 day * 30 (1 month)
         }
 
         header("Refresh:0");

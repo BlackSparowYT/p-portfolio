@@ -3,3 +3,4 @@ Disallow: /cgi-bin/
 Disallow: /files/images/
 Disallow: /files/logos/
 Disallow: /files/components/
+Sitemap: https://frjosten.nl/sitemap.xml
