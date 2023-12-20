@@ -22,6 +22,7 @@
             <section class="hero hero--homepage">
                 <div class="container">
                     <h1><?= get_block(1)['title'] ?></h1>
+                    <h2><?= get_block(1)['subtitle'] ?></h2>
                     <div class="btn-group">
                         <?php foreach(get_block(1)['buttons'] as $button) : ?>
                             <a class="btn btn--<?= $button['type'] ?>" href="<?= $button['link'] ?>"><?= $button['text'] ?></a>

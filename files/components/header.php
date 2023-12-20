@@ -6,7 +6,7 @@
         echo '
         <div id="navbar-desktop">
             <div class="navbar-desktop-sitename">
-                <h2>FR Josten</h2>
+                <h2>Finn Josten</h2>
             </div>
             <div class="navbar-desktop-items">';
             if ($page['name'] != "home") {
@@ -21,7 +21,7 @@
         
         <div id="navbar-mobile">
             <div class="navbar-mobile-sitename">
-                <h2>FR Josten</h2>
+                <h2>Finn Josten</h2>
             </div>
             <div class="navbar-mobile-items">
                 <a onclick="openNav()"><h3>&#9776;</h3></a>

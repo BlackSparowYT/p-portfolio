@@ -2,8 +2,8 @@
 
     $page['name'] = "over-mij";
     $page['category'] = "default";
-    $page['path_lvl'] = 1;
-    require_once("./files/config.php");
+    $page['path_lvl'] = 2;
+    require_once("../files/config.php");
 
 ?>
 

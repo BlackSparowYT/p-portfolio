@@ -124,24 +124,26 @@
 
 
     function set_page_meta($custom = null) {
+        global $site;
         if ($custom) {
             echo "<meta name='description' content='$custom'>";
         } else {
-            echo "<meta name='description' content='Beginnende webdevelopment student met focus op frontend. Ontdek mijn creatieve reis in code, design en avontuur'>";
+            echo "<meta name='description' content='".$site["description"]."'>";
         }
     }
 
     function set_social_meta() {
+        global $site;
         echo '
             <meta property="og:title" content="FR Jostens Portfolio">
-            <meta property="og:description" content="Webdevelopment student met focus op frontend. Ontdek mijn creatieve reis in code, design en avontuur">
-            <!--<meta property="og:image" content="https://your-website.com/og-image.png">-->
+            <meta property="og:description" content="'.$site["description"].'">
+            <meta property="og:image" content="https://frjosten.nl/files/images/over-mij.jpg">
             <meta property="og:url" content="https://frjosten.nl/">
 
             <meta name="twitter:title" content="Add title here">
-            <meta name="twitter:description" content="Webdevelopment student met focus op frontend. Ontdek mijn creatieve reis in code, design en avontuur">
-            <!--<meta name="twitter:url" content="https://your-website.com/twitter-image.png">-->
-            <meta name="twitter:card" content="summary">
+            <meta name="twitter:description" content="'.$site["description"].'">
+            <meta name="twitter:image" content="https://frjosten.nl/files/images/over-mij.jpg">
+            <meta name="twitter:url" content="https://frjosten.nl/">
 
         ';
     }

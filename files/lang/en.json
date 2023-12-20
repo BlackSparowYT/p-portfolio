@@ -4,7 +4,8 @@
             "id" : 1,
             "block_name" : "hero",
             "content" : {
-                "title" : "Beginnende Web Developer",
+                "title" : "Finn Josten",
+                "subtitle" : "Starting Web Developer",
                 "buttons" : [
                     {
                         "text" : "Bekijk mijn werk",

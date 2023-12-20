@@ -14,7 +14,10 @@
     <?php set_social_meta() ?>
 
     <?php echo '<link rel="stylesheet" href="' . $path . 'files/styles/core.css">' ?>
-    <?php echo '<link rel="icon" type="image/x-icon" href="' . $path . 'files/logos/favicon.png">' ?>
+    <?= '<link rel="apple-touch-icon" sizes="180x180" href="' . $path . 'files/logos/apple-touch-icon.png">' ?>
+    <?= '<link rel="icon" type="image/png" sizes="32x32" href="' . $path . 'files/logos/favicon-32x32.png">' ?>
+    <?= '<link rel="icon" type="image/png" sizes="16x16" href="' . $path . 'files/logos/favicon-16x16.png">' ?>
+    <?= '<link rel="manifest" href="' . $path . 'site.webmanifest">' ?>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
