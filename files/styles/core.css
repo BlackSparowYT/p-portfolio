@@ -1,6 +1,6 @@
 /** Import CSS for other pages **/
 
-@import url('https://cdn.vacso.cloud/icons/css/icons.css');
+@import url('https://cdn.vacso.cloud/icons/css/icons.min.css');
 @import url('./account.css');
 
 

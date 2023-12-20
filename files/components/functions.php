@@ -28,7 +28,7 @@
         echo '<iframe width="100%" height="100%" frameborder="0" src="'.$url.'"></iframe>';
     }
 
-
+    
 
     function getByID($array, $id) {
         $return = "unknown";
@@ -205,7 +205,7 @@
 
 
     function get_user_location() {
-        return 'NL';
+        /* return 'nl'; */
 
         $ipaddress = '';
         if (isset($_SERVER['HTTP_CLIENT_IP'])) {
@@ -222,6 +222,10 @@
             $ipaddress = $_SERVER['REMOTE_ADDR'];
         } else {
             $ipaddress = 'UNKNOWN';
+        }
+
+        if ($ipaddress == "127.0.0.1") {
+            return "nl";
         }
 
         $json = json_decode(file_get_contents("http://ipinfo.io/$ipaddress/json"), true);

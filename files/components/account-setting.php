@@ -1,6 +1,8 @@
 <?php 
 
-    if ($page['path_lvl'] == 2) {
+    if ($page['path_lvl'] == 1) {
+        require_once("./files/config.php");
+    } else if ($page['path_lvl'] == 2) {
         require_once("../files/config.php");
     } else if ($page['path_lvl'] == 3) {
         require_once("../../files/config.php");

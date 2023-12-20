@@ -26,8 +26,8 @@
         $name = $_POST['name'];
         $excerpt = $_POST['excerpt'];
         $content = json_encode(array($_POST['content1'], $_POST['content2']));
-        $tags = $_POST['tags'];
-        $skills = $_POST['skills'];
+        $tags = json_encode(explode(', ', $_POST['tags']));
+        $skills = json_encode(explode(', ', $_POST['skills']));
 
         $stmt = $link->prepare("UPDATE `projects` SET `name`=?, `excerpt`=?,`content`=?,`tags`=?, `skills`=? WHERE id = ?");
         $stmt->bind_param("sssssi", $name, $excerpt, $content, $tags, $skills, $id);
@@ -36,8 +36,8 @@
         $name = $_POST['name'];
         $excerpt = $_POST['excerpt'];
         $content = json_encode(array($_POST['content1'], $_POST['content2']));
-        $tags = $_POST['tags'];
-        $skills = $_POST['skills'];
+        $tags = json_encode(explode(', ', $_POST['tags']));
+        $skills = json_encode(explode(', ', $_POST['skills']));
 
         $stmt = $link->prepare("INSERT INTO `projects` SET `name`=?, `excerpt`=?,`content`=?,`tags`=?, `skills`=?");
         $stmt->bind_param("sssssi", $name, $excerpt, $content, $tags, $skills, $id);
@@ -101,11 +101,11 @@
                                 <div class="form__box">
                                     <div class="col">
                                         <h3>Tags</h3>
-                                        <textarea name="tags"><?= $result['tags'] ?></textarea>
+                                        <input name="tags" value="<?= implode(', ',json_decode($result['tags'])) ?>" >
                                     </div>
                                     <div class="col">
                                         <h3>Skills</h3>
-                                        <textarea name="skills"><?= $result['skills'] ?></textarea>
+                                        <input name="skills" value="<?= implode(', ',json_decode($result['skills'], true)) ?>" >
                                     </div>
                                 </div>
                                 <div class="form__box">
@@ -147,11 +147,11 @@
                         <div class="form__box">
                             <div class="col">
                                 <h3>Tags</h3>
-                                <textarea name="tags"></textarea>
+                                <input name="tags" placeholder="tag, tag" >
                             </div>
                             <div class="col">
                                 <h3>Skills</h3>
-                                <textarea name="skills"></textarea>
+                                <input name="skills" placeholder="skill, skill" >
                             </div>
                         </div>
                         <div class="form__box">
