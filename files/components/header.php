@@ -10,12 +10,12 @@
             </div>
             <div class="navbar-desktop-items">';
             if ($page['name'] != "home") {
-                '<a class="t1" href="'.$path.'"><h3>Home</h3></a>';
+                '<a class="t1" href="'.$path.'"><p>Home</p></a>';
             }
             echo '    
-                <a href="'.$path.'over-mij/"><h3>Over Mij</h3></a>
-                <a href="'.$path.'projects/"><h3>Mijn werk</h3></a>
-                <a href="mailto:contact@frjosten.nl"><h3>Contact</h3></a>
+                <a href="'.$path.'over-mij/"><p>Over Mij</p></a>
+                <a href="'.$path.'projects/"><p>Mijn werk</p></a>
+                <a href="'.$path.'contact/"><p>Contact</p></a>
             </div>
         </div>
         
@@ -24,18 +24,18 @@
                 <h2>Finn Josten</h2>
             </div>
             <div class="navbar-mobile-items">
-                <a onclick="openNav()"><h3>&#9776;</h3></a>
+                <a onclick="openNav()"><p>&#9776;</p></a>
             </div>
             <div id="navbar-mobile-fullscreen" class="nav-overlay">
                 <a href="javascript:void(0)" class="closebtn t1" onclick="closeNav()">&times;</a>
                 <div class="nav-overlay-content">';
                 if ($page['name'] != "home") {
-                    '<a class="t1" href="'.$path.'"><h3>Home</h3></a>';
+                    '<a class="t1" href="'.$path.'"><p>Home</p></a>';
                 }
                 echo '    
-                    <a href="'.$path.'over-mij"><h3>Over Mij</h3></a>
-                    <a href="'.$path.'projects/"><h3>Mijn werk</h3></a>
-                    <a href="mailto:contact@frjosten.nl"><h3>Contact</h3></a>
+                    <a href="'.$path.'over-mij"><p>Over Mij</p></a>
+                    <a href="'.$path.'projects/"><p>Mijn werk</p></a>
+                    <a href="'.$path.'contact/"><p>Contact</p></a>
                 </div>
             </div>
         </div>';
