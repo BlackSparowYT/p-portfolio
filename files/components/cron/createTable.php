@@ -3,6 +3,8 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
+    logToFile("\n---------------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
+
     $page['name'] = "createTable";
     $page['categorie'] = "cron";
     $page['path_lvl'] = 4;
@@ -22,7 +24,7 @@
     $last_row['year'] = $date;
 
     if ($cur_date['year'] > $last_row['year'] || $last_row['year'] == NULL) {
-        echo "Adding year row";
+        logToFile("Adding year row");
 
         $stmt = $link->prepare("INSERT INTO `visitors` (`date`, `count`, `mode`) VALUES (?,'0','year')");
         $stmt->bind_param("s", $cur_date['year']);
@@ -39,7 +41,7 @@
     $last_row['month'] = $date;
 
     if ($cur_date['month'] > $last_row['month'] || $last_row['month'] == NULL) {
-        echo "Adding month row";
+        logToFile("Adding month row");
 
         $stmt = $link->prepare("INSERT INTO `visitors` (`date`, `count`, `mode`) VALUES (?,'0','month')");
         $stmt->bind_param("s", $cur_date['month']);
@@ -56,11 +58,19 @@
     $last_row['day'] = $date;
 
     if ($cur_date['full'] > $last_row['day'] || $last_row['day'] == NULL) {
-        echo "Adding day row";
+        logToFile("Adding day row");
 
         $stmt = $link->prepare("INSERT INTO `visitors` (`date`, `count`, `mode`) VALUES (?,'0','day')");
         $stmt->bind_param("s", $cur_date['full']);
         $stmt->execute();
+    }
+
+
+    logToFile("\n\nDB Mirror script ended at " . date("Y-m-d H:i:s") . PHP_EOL);
+
+    function logToFile($message) {
+        $logFile = "cron_log.txt";
+        file_put_contents($logFile, $message, FILE_APPEND);
     }
 
 ?>
