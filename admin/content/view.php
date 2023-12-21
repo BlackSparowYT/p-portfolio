@@ -1,7 +1,6 @@
 <?php
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+    session_start();
 
     $page['name'] = "view";
     $page['category'] = "account";
@@ -26,29 +25,59 @@
 
 
     if (isset($_POST['project_edit'])) {
-        $name = $_POST['name'];
-        $excerpt = $_POST['excerpt'];
-        $content = json_encode(array($_POST['content1'], $_POST['content2']));
-        $tags = json_encode(explode(', ', $_POST['tags']));
-        $skills = json_encode(explode(', ', $_POST['skills']));
+        $name = empty($_POST['name']) ? null : $_POST['name'];
+        $excerpt = empty($_POST['excerpt']) ? null : $_POST['excerpt'];
+        $tags = empty($_POST['tags']) ? json_encode(array()) : json_encode(explode(', ', $_POST['tags']));
+        $skills = empty($_POST['skills']) ? json_encode(array()) : json_encode(explode(', ', $_POST['skills']));
+        $content1 = $_POST['content1'];
+        $content2 = $_POST['content2'];
+
+        if ($content1) {
+            if ($content2) { $content = json_encode(array($content1, $content2)); }
+            else { $content = json_encode(array($content1, null)); }
+        } else {
+            if ($content2) { $content = json_encode(array(null, $content2)); }
+            else { $content = json_encode(array()); }
+        }
 
         $stmt = $link->prepare("UPDATE `projects` SET `name`=?, `excerpt`=?,`content`=?,`tags`=?, `skills`=? WHERE id = ?");
         $stmt->bind_param("sssssi", $name, $excerpt, $content, $tags, $skills, $id);
         $stmt->execute();
-    } else if (isset($_POST['project_add'])) {
-        $name = $_POST['name'];
-        $excerpt = $_POST['excerpt'];
-        $content = json_encode(array($_POST['content1'], $_POST['content2']));
-        $tags = json_encode(explode(', ', $_POST['tags']));
-        $skills = json_encode(explode(', ', $_POST['skills']));
 
-        $stmt = $link->prepare("INSERT INTO `projects` SET `name`=?, `excerpt`=?,`content`=?,`tags`=?, `skills`=?");
-        $stmt->bind_param("sssssi", $name, $excerpt, $content, $tags, $skills, $id);
+        header("Location: projects.php");
+        exit;
+
+    } else if (isset($_POST['project_add'])) {
+
+        $name = empty($_POST['name']) ? null : $_POST['name'];
+        $excerpt = empty($_POST['excerpt']) ? null : $_POST['excerpt'];
+        $tags = empty($_POST['tags']) ? json_encode(array()) : json_encode(explode(', ', $_POST['tags']));
+        $skills = empty($_POST['skills']) ? json_encode(array()) : json_encode(explode(', ', $_POST['skills']));
+        $content1 = $_POST['content1'];
+        $content2 = $_POST['content2'];
+
+        if ($content1) {
+            if ($content2) { $content = json_encode(array($content1, $content2)); }
+            else { $content = json_encode(array($content1, null)); }
+        } else {
+            if ($content2) { $content = json_encode(array(null, $content2)); }
+            else { $content = json_encode(array()); }
+        }
+
+        $stmt = $link->prepare("INSERT INTO `projects` SET `name`=?, `excerpt`=?, `content`=?, `tags`=?, `skills`=?");
+        $stmt->bind_param("sssss", $name, $excerpt, $content, $tags, $skills);
         $stmt->execute();
+
+        header("Location: projects.php");
+        exit;
+
     } else if (isset($_POST['delete'])) {
         $stmt = $link->prepare("DELETE FROM `projects` WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
+
+        header("Location: projects.php");
+        exit;
     }
 
 ?>
