@@ -1,5 +1,8 @@
 <?php
 
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
     $page['name'] = "forgot_pass";
     $page['category'] = "account";
     $page['path_lvl'] = 2;
@@ -78,7 +81,7 @@
 
         $email = $_POST['email'];
 
-        $mail1 = new PHPMailer(true);
+        $mail = new PHPMailer(true);
 
         $stmt = $link->prepare("SELECT reset_token FROM `users` WHERE email = ?");
         $stmt->bind_param("s", $email);
@@ -87,42 +90,45 @@
         $result = mysqli_fetch_assoc($is_run);
         $reset_token = $result['reset_token'];
 
-        $emaillink = $site['url']."/admin/forgot-pass.php?action=reset&token=".$reset_token;
+        $emaillink = 'https://'.$site['url']."/admin/forgot-pass.php?action=reset&token=".$reset_token;
         $onderwerp = "Forgot password";
-        $inhoud = "Use this link to reset your password ".$emaillink."\nDid you not request a password reset? Get in conact with our help desk! ".$site['url']."/contact.php\n\nRegards,\n".$site['name'];
+        $inhoud = "Use this link to reset your password ".$emaillink."\nDid you not request a password reset? Get in conact with our help desk! https://".$site['url']."/contact.php\n\nRegards,\n".$site['name'];
 
         try {
             //Server settings
-            $mail1->isSMTP();                                            //Send using SMTP
-            $mail1->Host       = $mail_host;                             //Set the SMTP server to send through
-            $mail1->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail1->Username   = $mail_Username;                         //SMTP username
-            $mail1->Password   = $mail_Password;                         //SMTP password
-            $mail1->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-            $mail1->Port       = $mail_Port;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = $mail_host;                             //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $mail->Username   = $mail_Username;                         //SMTP username
+            $mail->Password   = $mail_Password;                         //SMTP password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $mail->Port       = $mail_Port;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail1->setFrom('testing@design-atlas.nl');
-            $mail1->addAddress('support@design-atlas.nl');
-            $mail1->addAddress($email);
+            $mail->setFrom('testing@design-atlas.nl');
+            $mail->addAddress('support@design-atlas.nl');
+            $mail->addAddress($email);
 
             //Content
-            $mail1->isHTML(false);                                        //Set email format to HTML
-            $mail1->Subject = $onderwerp;
-            $mail1->Body    = $inhoud;
+            $mail->isHTML(false);                                        //Set email format to HTML
+            $mail->Subject = $onderwerp;
+            $mail->Body    = $inhoud;
 
-            $mail1->send();
+            $mail->send();
+
+            header("Location: login.php");
+            exit();
 
         } catch (Exception $e) {
 
-            echo $mail1->ErrorInfo;
+            echo $mail->ErrorInfo;
 
             // Log the error
 
             $file = fopen($path."files/errors/mail.txt","a");
             $ip = $_SERVER['REMOTE_ADDR'];
             $date = date("Y/m/d H:i:s");
-            $fdata = "\n\nDate & Time: ".$date.", \nError: {".$mail1->ErrorInfo."};\nEmail: ".$email.", Subject: ".$onderwerp.", Content:".$inhoud.";";
+            $fdata = "\n\nDate & Time: ".$date.", \nError: {".$mail->ErrorInfo."};\nEmail: ".$email.", Subject: ".$onderwerp.", Content:".$inhoud.";";
             fwrite($file,$fdata);
             fclose($file);
 
