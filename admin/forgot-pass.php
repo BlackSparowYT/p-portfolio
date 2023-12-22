@@ -1,8 +1,5 @@
 <?php
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-
     $page['name'] = "forgot_pass";
     $page['category'] = "account";
     $page['path_lvl'] = 2;
@@ -12,17 +9,15 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    require $path."files/components/PHPMailer/src/Exception.php";
-    require $path."files/components/PHPMailer/src/PHPMailer.php";
-    require $path."files/components/PHPMailer/src/SMTP.php";
+    require $path."files/components/PHPmailer/src/Exception.php";
+    require $path."files/components/PHPmailer/src/PHPMailer.php";
+    require $path."files/components/PHPmailer/src/SMTP.php";
 
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
     } else {
         $action = null;
     }
-
-
 
 
     // Check if the user has submitted the form
