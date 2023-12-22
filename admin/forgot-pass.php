@@ -24,6 +24,7 @@
 
 
 
+
     // Check if the user has submitted the form
     if (isset($_POST['reset_password'])) {
         // Get the email, password and reset token from the form
@@ -92,17 +93,17 @@
 
         $emaillink = 'https://'.$site['url']."/admin/forgot-pass.php?action=reset&token=".$reset_token;
         $onderwerp = "Forgot password";
-        $inhoud = "Use this link to reset your password ".$emaillink."\nDid you not request a password reset? Get in conact with our help desk! https://".$site['url']."/contact.php\n\nRegards,\n".$site['name'];
+        $inhoud = "Use this link to reset your password \n".$emaillink."\n\nDid you not request a password reset? Get in conact with our help desk! https://".$site['url']."/contact.php\n\nRegards,\n".$site['name'];
 
         try {
             //Server settings
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = $mail_host;                             //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = $mail_Username;                         //SMTP username
-            $mail->Password   = $mail_Password;                         //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-            $mail->Port       = $mail_Port;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->isSMTP();
+            $mail->Host       = $mail_host;
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $mail_Username;
+            $mail->Password   = $mail_Password;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = $mail_Port;
 
             //Recipients
             $mail->setFrom('testing@design-atlas.nl');
@@ -110,7 +111,7 @@
             $mail->addAddress($email);
 
             //Content
-            $mail->isHTML(false);                                        //Set email format to HTML
+            $mail->isHTML(false);
             $mail->Subject = $onderwerp;
             $mail->Body    = $inhoud;
 
@@ -162,7 +163,7 @@
 
                         <?php 
                         
-                            if($action=="reset") {
+                            if ($action == "reset") {
                                 echo '
                                 <div>
                                     <h4>Email</h4>
@@ -195,7 +196,7 @@
                                     </h5>
                                     <hr>
                                 </div>';
-                            } elseif ($action=="email") {
+                            } elseif ($action == "email") {
                                 echo '
                                 <div>
                                     <h4>Email</h4>

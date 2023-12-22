@@ -161,6 +161,7 @@
         $site_name = $site['name'];
 
         if (str_contains($page_name, '-')) { $page_name = str_replace('-',' ', $page_name); }
+        if (str_contains($page_name, '_')) { $page_name = str_replace('_',' ', $page_name); }
 
         
         $title = '<title>';

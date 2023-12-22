@@ -7,7 +7,7 @@ html:has(.page--account) { background-color: var(--bg-clr-dark); }
 
 /** Pages **/
 
-.login-page, .register-page, .admin-page, .admin-item { background-color: var(--primary); background-image: url(images/stacked-waves.png); background-repeat: no-repeat; background-position: bottom left; background-size: contain; }
+.login-page, .register-page, .admin-page, .admin-item { background-color: var(--primary); }
 .form .errors { max-width: 90%; }
 
 
