@@ -102,7 +102,6 @@
 
             //Recipients
             $mail->setFrom('testing@design-atlas.nl');
-            $mail->addAddress('support@design-atlas.nl');
             $mail->addAddress($email);
 
             //Content

@@ -1,10 +1,10 @@
 <header>
-    <nav>
+    <nav class="container">
 
         <?php 
 
         echo '
-        <div id="navbar-desktop">
+        <div class="navbar-desktop">
             <div class="navbar-desktop-sitename">
                 <h2>Finn Josten</h2>
             </div>
@@ -19,7 +19,7 @@
             </div>
         </div>
         
-        <div id="navbar-mobile">
+        <div class="navbar-mobile">
             <div class="navbar-mobile-sitename">
                 <h2>Finn Josten</h2>
             </div>

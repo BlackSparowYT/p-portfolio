@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    logToFile("\n---------------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
+    logToFile("-----------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
 
     $page['name'] = "createTable";
     $page['categorie'] = "cron";
@@ -31,6 +31,8 @@
             $stmt->bind_param("s", $cur_date['year']);
             $stmt->execute();
             $stmt->close();
+
+            logToFile("Month row added");
         }
 
         // Insert month row if needed
@@ -49,6 +51,8 @@
             $stmt->bind_param("s", $cur_date['month']);
             $stmt->execute();
             $stmt->close();
+
+            logToFile("Month row added");
         }
 
         // Insert day row if needed
@@ -67,6 +71,8 @@
             $stmt->bind_param("s", $cur_date['full']);
             $stmt->execute();
             $stmt->close();
+
+            logToFile("Day row added");
         }
 
     } catch (Exception $e) {

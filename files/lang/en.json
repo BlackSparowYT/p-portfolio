@@ -28,6 +28,7 @@
                 "title" : "Wie ben ik op dit kleine stukje van het web?",
                 "text1" : "Welkom op mijn digitale hoekje van het web! Mijn naam is Finn, een gedreven student in softwareontwikkeling met een bijzondere focus op de intrigerende wereld van web technologie. Met ~5 jaar aan zelfgeleerde ervaring omarm ik met enthousiasme de uitdagingen van het coderen, waarbij ik me voortdurend laat inspireren door de magie van code. Mijn nieuwsgierigheid en liefde voor het vak hebben me niet alleen geholpen om de complexiteit van het programmeren te omarmen, maar stimuleren me ook om continue te leren en te groeien in deze boeiende discipline.",
                 "text2" : "\\n\\nNieuwsgierig naar mijn andere interesses? Lees meer over mij en ontdek mijn diverse wereld van hobby's op de <a class='btn btn--link' href='./over-mij'>over mij</a> pagina!",
+                "image" : "https://cdn.vacso.cloud/frjosten.nl/images/profile2.png",
                 "buttons" : [
                     {
                         "text" : "Bekijk over mij pagina",
@@ -101,6 +102,54 @@
                     3
                 ]
             }
+        }
+    ],
+    "over-mij" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "Over mij"
+            }
+        },
+        {
+            "id" : 2,
+            "block_name" : "text",
+            "block_title" : "Over mij",
+            "content" : {
+                "title" : "Wie ben ik?",
+                "text" : "Welkom op mijn digitale hoekje! Ik ben Finn, een enthousiaste student in softwareontwikkeling met al zo'n vijf jaar ervaring in het betoverende rijk van code. Wat begon als een ontdekkingsreis door eenvoudige programmeertalen, is nu uitgegroeid tot een duik in de intrigerende complexiteit van het coderen.\\n\\nMaar wacht, er is meer dan alleen bits en bytes in mijn wereld! In mijn vrije tijd neem ik mijn drone mee op geweldige vluchten, verken ik avontuurlijke bestemmingen tijdens vakanties met gaafste wandelingen en ontspan ik met boogschieten en judo. Deze activiteiten geven kleur aan mijn dagen en zorgen voor de nodige afwisseling.\\n\\nTerwijl ik blijf spelen met code en nieuwe dingen ontdek, nodig ik je uit om meer te ontdekken over mijn digitale en avontuurlijke wereld!",
+                "image" : "https://cdn.vacso.cloud/frjosten.nl/images/profile.png",
+                "buttons" : [
+                    {
+                        "text" : "Bekijk mijn werk",
+                        "link" : "https://[%siteUrl]/projects",
+                        "type" : "primary"
+                    }
+                ]
+            }
+        },
+        {
+            "id" : 3,
+            "block_name" : "hobbies",
+            "block_title" : "Hobbies",
+            "content" : [
+                {
+                    "id" : 3.1,
+                    "text" : "Drone vliegen, mijn ultieme ontsnapping naar vrijheid. Het gezoem van de propellers, de sensatie van stijgen in de lucht en het verkennen van de wereld van bovenaf. Het is meer dan een hobby; het is een manier om te ontsnappen aan de zwaartekracht van het dagelijkse leven. Elk avontuur brengt een nieuw verhaal, vastgelegd in luchtfoto's en herinneringen. En terwijl ik zweef boven de wereld, ontdek ik de kunst van vrijheid in zijn puurste vorm.",
+                    "image" : "https://cdn.vacso.cloud/frjosten.nl/images/drone.png"
+                },
+                {
+                    "id" : 3.2,
+                    "text" : "Mountainbiken, mijn avontuurlijke ontsnapping tot ver buiten de gebaande paden. Vooral op vakantie, nieuwe paden betredend en adembenemende landschappen doorkruisend, is elke afdaling een uitdaging die ik graag aanga. Mountainbiken biedt een intense workout en een ongeëvenaarde vrijheid te midden van de natuurlijke pracht, vol adrenaline.",
+                    "image" : "https://cdn.vacso.cloud/frjosten.nl/images/mountainbiken.png"
+                },
+                {
+                    "id" : 3.3,
+                    "text" : "Boogschieten, mijn ontsnapping uit de dagelijkse drukte. De kracht van de boog, concentratie op het doel, vooral bij 3D schieten waar de natuurlijke omgeving en uitdagende doelen de adrenaline laten stromen. Elke pijl die zijn doel raakt, vertelt een verhaal van focus en precisie, een persoonlijke triomf. In het boogschieten, en vooral bij 3D schieten, vind ik niet alleen een sportieve uitdaging, maar ook een moment van puur plezier en avontuur.",
+                    "image" : "https://cdn.vacso.cloud/frjosten.nl/images/boogschieten.png"
+                }
+            ]
         }
     ]
 }

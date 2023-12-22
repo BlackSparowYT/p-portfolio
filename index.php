@@ -29,6 +29,7 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
+                <i class="da-icon da-icon--angle-down"></i>
             </section>
 
             <section class="block text wst--large wsb--large bg--dark">
@@ -38,12 +39,17 @@
                         <p><?= get_block_title(2) ?></p>
                     </div>
                     <h2><?= get_block(2)['title'] ?></h2>
-                    <p><?= get_block(2)['text1'] ?></p>
-                    <p class="width--small"><?= get_block(2)['text2'] ?></p>
-                    <div class="btn-group btn-group--left">
-                        <?php foreach(get_block(2)['buttons'] as $button) : ?>
-                            <a class="btn btn--<?= $button['type'] ?>" href="<?= $button['link'] ?>"><?= $button['text'] ?></a>
-                        <?php endforeach; ?>
+                    <div class="text">
+                        <div>
+                            <p><?= get_block(2)['text1'] ?></p>
+                            <p class="width--normal"><?= get_block(2)['text2'] ?></p>
+                            <div class="btn-group btn-group--left">
+                                <?php foreach(get_block(2)['buttons'] as $button) : ?>
+                                    <a class="btn btn--<?= $button['type'] ?>" href="<?= $button['link'] ?>"><?= $button['text'] ?></a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <img src="<?= get_block(2)['image'] ?>" >
                     </div>
                 </div>
             </section>

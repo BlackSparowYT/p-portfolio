@@ -30,24 +30,53 @@
                 </div>
             </section>
 
-            <!-- 
-                <section class="block text wst--large wsb--large bg--dark">
-                    <div class="container">
-                        <div class="block__name">
-                            <i class="da-icon  da-icon--custom-dot"></i>
-                            <p><?= get_block_title(2) ?></p>
-                        </div>
-                        <h2><?= get_block(2)['title'] ?></h2>
-                        <p><?= get_block(2)['text1'] ?></p>
-                        <p class="width--small"><?= get_block(2)['text2'] ?></p>
-                        <div class="btn-group btn-group--left">
-                            <?php foreach(get_block(2)['buttons'] as $button) : ?>
-                                <a class="btn btn--<?= $button['type'] ?>" href="<?= $button['link'] ?>"><?= $button['text'] ?></a>
-                            <?php endforeach; ?>
-                        </div>
+            <section class="block text block--over-mij wst--large wsb--large bg--dark">
+                <div class="container">
+                    <div class="block__name">
+                        <i class="da-icon  da-icon--custom-dot"></i>
+                        <p><?= get_block_title(2) ?></p>
                     </div>
-                </section>
+                    <h2><?= get_block(2)['title'] ?></h2>
+                    <div class="text">
+                        <p><?= get_block(2)['text'] ?></p>
+                        <img src="<?= get_block(2)['image'] ?>" >
+                    </div>
+                    <div class="btn-group btn-group--left">
+                        <?php foreach(get_block(2)['buttons'] as $button) : ?>
+                            <a class="btn btn--<?= $button['type'] ?>" href="<?= $button['link'] ?>"><?= $button['text'] ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </section>
 
+            <section class="block hobbies wst--large wsb--large">
+                <div class="container wsb--small">
+                    <div class="block__name">
+                        <i class="da-icon  da-icon--custom-dot"></i>
+                        <p><?= get_block_title(3) ?></p>
+                    </div>
+                </div>
+                <div class="container mb--large bg--light">
+                    <div class="text">
+                        <p><?= get_block(3)[0]['text'] ?></p>
+                        <img src="<?= get_block(3)[0]['image'] ?>" >
+                    </div>
+                </div>
+                <div class="container mb--large  bg--light">
+                    <div class="text">
+                        <img src="<?= get_block(3)[1]['image'] ?>" >
+                        <p><?= get_block(3)[1]['text'] ?></p>
+                    </div>
+                </div>
+                <div class="container bg--light">
+                    <div class="text">
+                        <p><?= get_block(3)[2]['text'] ?></p>
+                        <img src="<?= get_block(3)[2]['image'] ?>" >
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
                 <section class="block posts wst--medium wsb--medium bg--normal">
                     <div class="container">
                         <div class="block__name">
