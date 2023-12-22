@@ -9,9 +9,9 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    require '../files/components/PHPMailer/src/Exception.php';
-    require '../files/components/PHPMailer/src/PHPMailer.php';
-    require '../files/components/PHPMailer/src/SMTP.php';
+    require '../files/components/PHPmailer/src/Exception.php';
+    require '../files/components/PHPmailer/src/PHPMailer.php';
+    require '../files/components/PHPmailer/src/SMTP.php';
 
     $stmt = $link->prepare("SELECT id, verify_token FROM `users` WHERE email = ? AND id = ?");
     $stmt->bind_param("si", $email, $id);
