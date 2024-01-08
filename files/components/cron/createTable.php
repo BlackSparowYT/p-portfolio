@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    logToFile("-----------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
+    logToFile("-----------------------------------------------\n\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
 
     $page['name'] = "createTable";
     $page['categorie'] = "cron";
@@ -25,14 +25,16 @@
         $last_row['year'] = $date;
 
         if ($cur_date['year'] > $last_row['year'] || $last_row['year'] == NULL) {
-            logToFile("Adding year row");
+            logToFile("\nAdding year row");
 
             $stmt = $link->prepare("INSERT INTO `visitors` (`date`, `count`, `mode`) VALUES (?,'0','year')");
             $stmt->bind_param("s", $cur_date['year']);
             $stmt->execute();
             $stmt->close();
 
-            logToFile("Month row added");
+            logToFile(" | Year row added");
+        } else {
+            logToFile("\nYear row not needed    (Database: ".$last_row['year']."; Date: ".$cur_date['year'].")");
         }
 
         // Insert month row if needed
@@ -45,14 +47,16 @@
         $last_row['month'] = $date;
 
         if ($cur_date['month'] > $last_row['month'] || $last_row['month'] == NULL) {
-            logToFile("Adding month row");
+            logToFile("\nAdding month row");
 
             $stmt = $link->prepare("INSERT INTO `visitors` (`date`, `count`, `mode`) VALUES (?,'0','month')");
             $stmt->bind_param("s", $cur_date['month']);
             $stmt->execute();
             $stmt->close();
 
-            logToFile("Month row added");
+            logToFile(" | Month row added");
+        } else {
+            logToFile("\nMonth row not needed   (Database: ".$last_row['month']."; Date: ".$cur_date['month'].")");
         }
 
         // Insert day row if needed
@@ -65,14 +69,16 @@
         $last_row['day'] = $date;
 
         if ($cur_date['full'] > $last_row['day'] || $last_row['day'] == NULL) {
-            logToFile("Adding day row");
+            logToFile("\nAdding day row");
 
             $stmt = $link->prepare("INSERT INTO `visitors` (`date`, `count`, `mode`) VALUES (?,'0','day')");
             $stmt->bind_param("s", $cur_date['full']);
             $stmt->execute();
             $stmt->close();
 
-            logToFile("Day row added");
+            logToFile(" | Day row added");
+        } else {
+            logToFile("\nDay row not needed     (Database: ".$last_row['day']."; Date: ".$cur_date['full'].")");
         }
 
     } catch (Exception $e) {
