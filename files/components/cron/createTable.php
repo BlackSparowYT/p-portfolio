@@ -16,6 +16,7 @@
 
     try {
         // Insert year row if needed
+        logToFile("\nGetting year data");
         $stmt = $link->prepare("SELECT * FROM `visitors` WHERE mode = 'year' ORDER BY id DESC LIMIT 1");
         $stmt->execute();
         $stmt->bind_result($id, $date, $count, $mode);
@@ -38,6 +39,7 @@
         }
 
         // Insert month row if needed
+        logToFile("\nGetting month data");
         $stmt = $link->prepare("SELECT * FROM `visitors` WHERE mode = 'month' ORDER BY id DESC LIMIT 1");
         $stmt->execute();
         $stmt->bind_result($id, $date, $count, $mode);
@@ -60,6 +62,7 @@
         }
 
         // Insert day row if needed
+        logToFile("\nGetting day data");
         $stmt = $link->prepare("SELECT * FROM `visitors` WHERE mode = 'day' ORDER BY id DESC LIMIT 1");
         $stmt->execute();
         $stmt->bind_result($id, $date, $count, $mode);
