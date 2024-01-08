@@ -5,17 +5,10 @@
 
     logToFile("-----------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
 
-    logToFile("\nSetting config variables");
     $config_failed = false;
-    try {
-        $page['name'] = "createTable";
-        $page['categorie'] = "cron";
-        $page['path_lvl'] = 4;
-    } catch (Exception $e) {
-        logToFile("\nError: " . $e->getMessage());
-        $config_failed = true;
-        logToFile("\n\nFailed to set config variables, stopping cron");
-    }
+    $page['name'] = "createTable";
+    $page['categorie'] = "cron";
+    $page['path_lvl'] = 4;
     logToFile("\nGetting config");
     try {
         require_once("../../../files/config.php");
