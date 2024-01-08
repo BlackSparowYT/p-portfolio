@@ -3,13 +3,15 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    logToFile("-----------------------------------------------\n\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
+    logToFile("-----------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
 
+    logToFile("\nGetting config");
     $page['name'] = "createTable";
     $page['categorie'] = "cron";
     $page['path_lvl'] = 4;
     require_once("../../config.php");
 
+    logToFile(" > Setting variables");
     $cur_date['full'] = date('Y-m-d');
     $cur_date['month'] = date('Y-m');
     $cur_date['year'] = date('Y');
