@@ -8,7 +8,7 @@
     logToFile("\nGetting config");
     $page['name'] = "createTable";
     $page['categorie'] = "cron";
-    $page['path_lvl'] = 4;
+    $page['path_lvl'] = 3;
     require_once("../../config.php");
 
     logToFile(" > Setting variables");
