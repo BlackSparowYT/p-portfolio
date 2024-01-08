@@ -8,8 +8,12 @@
     logToFile("\nGetting config");
     $page['name'] = "createTable";
     $page['categorie'] = "cron";
-    $page['path_lvl'] = 3;
-    require_once("../../config.php");
+    $page['path_lvl'] = 4;
+    try {
+        require_once("../../../files/config.php");
+    } catch (Exception $e) {
+        logToFile("Error: " . $e->getMessage());
+    }
 
     logToFile(" > Setting variables");
     $cur_date['full'] = date('Y-m-d');
