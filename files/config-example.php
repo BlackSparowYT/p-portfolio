@@ -70,7 +70,7 @@
     // Link the DB
     if ($use_db && $use_credentials) {
         $link = new mysqli($db_host, $db_user, $db_password, $db_name);
-        if (!$link){
+        if ($link->connect_error){
             echo "<p style='color: red;'>Connection Unsuccessful!</p>";
         }
     }
@@ -78,20 +78,22 @@
     // Link secondary the DB
     if ($use_secondary_db && $use_credentials) { 
         $second_link = new mysqli($sec_db_host, $sec_db_user, $sec_db_password, $sec_db_name);
-        if (!$second_link){
+        if ($second_link->connect_error){
             echo "<p style='color: red;'>Secondary Connection Unsuccessful!</p>";
         }
     }
-
+    
     // Do some statistic stuff
-    if ($use_credentials && $use_db && $use_statistics) {
-        include($path.'files/components/statistics.php');
+    if($page['categorie'] != "cron") {
+        if ($use_credentials && $use_db && $use_statistics) {
+            include($path.'files/components/statistics.php');
+        }
     }
 
-
-
     // Get and set some settings
-    if ($use_db_settings && $use_db  && $use_credentials) { include($path.'files/components/settings.php'); }
+    if ($use_db_settings && $use_db  && $use_credentials) {
+        include($path.'files/components/settings.php');
+    }
 
 
 
@@ -111,7 +113,7 @@
     $variable['month']      = date('m');
     $variable['monthName']  = date('F');
     $variable['day']        = date('d');
-    $variable['dayName']    = date('z');
-    $variable['dayOfYear']  = date('l');
+    $variable['dayName']    = date('l');
+    $variable['dayOfYear']  = date('z');
 
 ?>

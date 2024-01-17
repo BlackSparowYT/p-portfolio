@@ -453,6 +453,14 @@ footer .block-2 a img { width: 40px; height: 40px; }
 }
 
 
+/** Display **/
+.d-grid { display: grid !important; }
+.d-grid--center { display: grid !important; place-content: center !important; }
+.d-flex { display: flex !important; }
+.d-flex--center { display: flex !important; justify-content: center !important; align-items: center; }
+.d-none { display: none !important; }
+
+
 
 
 

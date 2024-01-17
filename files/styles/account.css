@@ -72,7 +72,7 @@ html:has(.page--account) { background-color: var(--bg-clr-dark); }
 
 .page--account .content { min-height: calc(100vh - 30px); margin: 15px 15px 15px 0; }
 .page--account.dashboard .content,
-.page--account.analytics .content { row-gap: 15px; --gc: 1; --gr: 4; display: grid; grid-template-columns: repeat(var(--gc), minmax(0,1fr)); grid-template-rows: repeat(var(--gr), minmax(0,1fr)); }
+.page--account.analytics .content { row-gap: 15px; --gc: 1; --gr: 4; grid-column: 2; display: grid; grid-template-columns: repeat(var(--gc), minmax(0,1fr)); grid-template-rows: repeat(var(--gr), minmax(0,1fr)); }
 .page--account:not(.dashboard, .analytics) .content { background-color: var(--bg-clr); border-radius: 10px; }
 
 .page--account .btn-group { justify-content: start; margin: 30px; }
@@ -99,7 +99,7 @@ html:has(.page--account) { background-color: var(--bg-clr-dark); }
 .page--account .content .row .col .statsrate .da-icon--orange { --clr: var(--orange-300); }
 .page--account .content .row .col .statsrate:has(.da-icon--orange) p { color: var(--orange-300); }
 
-.page--account .content .chart { height: 400px; width: 1000px; position: relative; aspect-ratio: unset !important; }
+.page--account.dashboard .content .chart { height: 400px; width: 1000px; position: relative; aspect-ratio: unset !important; }
 
 .page--account .row.span--2 { grid-row: span 2; }
 .page--account .col.span--2 { grid-column: span 2; }
@@ -109,6 +109,12 @@ html:has(.page--account) { background-color: var(--bg-clr-dark); }
 .page--account .col.bg--accent { background: linear-gradient(160deg,var(--bg-clr),var(--accent)) !important; }
 .page--account .col.bg--light { background-color: var(--bg-clr-light) !important; }
 .page--account .col.bg--dark { background-color: var(--bg-clr-dark) !important; }
+
+
+
+/*** Account Content > Analytics ***/
+
+.page--account.analytics .content .chart { height: 400px; width: 740px; position: relative; aspect-ratio: unset !important; }
 
 
 
