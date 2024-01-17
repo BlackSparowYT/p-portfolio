@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    logToFile("-----------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
+    logToFile("\n-----------------------------------------------\nDB Mirror script started at " . date("Y-m-d H:i:s") . PHP_EOL);
 
     $config_failed = false;
     $page['name'] = "createTable";
