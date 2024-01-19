@@ -7,7 +7,7 @@
 
     $config_failed = false;
     $page['name'] = "createTable";
-    $page['categorie'] = "cron";
+    $page['category'] = "cron";
     $page['path_lvl'] = 4;
     logToFile("\nGetting config");
     try {

@@ -3,12 +3,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php
-        if (!$page['custom_title']['flag'] || !isset($page['custom_title']['flag'])) { echo get_page_title(); }
+        if (!isset($page['custom_title']['flag']) || !$page['custom_title']['flag']) { echo get_page_title(); }
         else { echo get_page_title($page['custom_title']['seperator'], $page['custom_title']['part1'], $page['custom_title']['part2']); }
         // Note that part1, part2 and the seperator are required to be set
     ?>
     <?php
-        if (!$page['custom_meta'] || !isset($page['custom_meta'])) { echo set_page_meta(); }
+        if (!isset($page['custom_meta']) || !$page['custom_meta']) { echo set_page_meta(); }
         else { echo set_page_meta($page['custom_meta']); }
     ?>
     <?php set_social_meta() ?>

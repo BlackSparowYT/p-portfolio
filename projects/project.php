@@ -18,14 +18,14 @@
         $stmt->execute();
         $stmt->bind_result($count);
         $stmt->fetch();
-        var_dump($count);
         if ($count != 1) header("Location: ".$path."projects/");
+        $stmt->close();
     } else {
         header("Location: ".$path."projects/");
     }
     
     $page['custom_title']['seperator'] = '|';
-    $page['custom_title']['part1'] = 'Project ' . $id;
+    $page['custom_title']['part1'] = 'Project ' . $title;
     $page['custom_title']['part2'] = 'Portfolio';
     
 ?>
@@ -57,7 +57,7 @@
                     <?php
                         $stmt = $link->prepare("SELECT content,image FROM `projects` WHERE name LIKE ?");
                         $stmt->bind_param("s", $title);
-                        
+
                         if ($stmt->execute()) {
                             $is_run = $stmt->get_result();
                             $result = mysqli_fetch_assoc($is_run);
