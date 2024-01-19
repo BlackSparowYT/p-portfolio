@@ -10,16 +10,24 @@
     $Parsedown = new Parsedown();
     $Parsedown->setBreaksEnabled(true);
 
-    if(isset($_GET['id']) && $_GET['id']) {
-        $id = $_GET['id'];
-    } else {
-        header("Location: ./index.php");
-    }
+    if(isset($_GET['title']) && $_GET['title']) {
+        $title = urldecode($_GET['title']);
 
+        $stmt = $link->prepare("SELECT COUNT(*) FROM `projects` WHERE name LIKE ?");
+        $stmt->bind_param("s", $title);
+        $stmt->execute();
+        $stmt->bind_result($count);
+        $stmt->fetch();
+        var_dump($count);
+        if ($count != 1) header("Location: ".$path."projects/");
+    } else {
+        header("Location: ".$path."projects/");
+    }
+    
     $page['custom_title']['seperator'] = '|';
     $page['custom_title']['part1'] = 'Project ' . $id;
     $page['custom_title']['part2'] = 'Portfolio';
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +55,8 @@
                     </div>
                     <h2><?= get_block(1)['title'] ?></h2>
                     <?php
-                        $stmt = $link->prepare("SELECT content,image FROM `projects` WHERE id = ?");
-                        $stmt->bind_param("i", $id);
+                        $stmt = $link->prepare("SELECT content,image FROM `projects` WHERE name LIKE ?");
+                        $stmt->bind_param("s", $title);
                         
                         if ($stmt->execute()) {
                             $is_run = $stmt->get_result();
@@ -78,8 +86,8 @@
                     <h2><?= get_block(2)['title'] ?></h2>
                     <div class="grid gc--4">
                         <?php
-                            $stmt = $link->prepare("SELECT skills FROM `projects` WHERE id = ?");
-                            $stmt->bind_param("i", $id);
+                        $stmt = $link->prepare("SELECT skills FROM `projects` WHERE name LIKE ?");
+                        $stmt->bind_param("s", $title);
 
                             if ($stmt->execute()) {
                                 $is_run = $stmt->get_result();
@@ -114,7 +122,7 @@
                                 $is_run = $stmt->get_result();
                                 while ($result = mysqli_fetch_assoc($is_run)) { ?>
 
-                                    <a class="card card--posts" href='<?= $path ?>projects/project.php?id=<?= $result['id'] ?>'>
+                                    <a class="card card--posts" href='<?= $path ?>project/<?= strtolower(urlencode($result['name'])) ?>'>
                                         <img src='<?= $path."files/images/posts/".$result['image']?>' alt="image" />
                                         <div class="text">
                                             <p class="title"><?= $result['name'] ?></p>
@@ -134,8 +142,3 @@
 
     </body>
 </html>
-
-
-
-<!-- <div>
-</div> -->

@@ -1,0 +1,34 @@
+RewriteOptions inherit
+ErrorDocument 400 /files/errors/400.php
+ErrorDocument 401 /files/errors/401.php
+ErrorDocument 403 /files/errors/403.php
+ErrorDocument 404 /files/errors/404.php
+ErrorDocument 500 /files/errors/500.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # If the URL is exactly "projects/", redirect to projects/index.php
+    RewriteRule ^projects/$ projects/index.php [L]
+
+    # If the URL starts with "projects/" followed by a title, rewrite to projects/project.php?title=...
+    RewriteRule ^project/([^/]+)/?$ projects/project.php?title=$1 [L,QSA]
+</IfModule>
+
+#Enable caching
+<IfModule mod_expires.c>
+    ExpiresActive on
+ 
+    ExpiresByType image/jpg "access plus 4 weeks"
+    ExpiresByType image/jpeg "access plus 4 weeks"
+    ExpiresByType image/gif "access plus 4 weeks"
+    ExpiresByType image/png "access plus 4 weeks"
+ 
+    ExpiresByType text/css "access plus 4 weeks"
+</IfModule>
+
+#Enable HSTS
+Header set Strict-Transport-Security: "max-age=31536000 ; includeSubDomains ;" env=HTTPS
+Options +Indexes
+IndexOptions +HTMLTable +FancyIndexing

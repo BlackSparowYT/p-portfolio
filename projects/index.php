@@ -35,7 +35,7 @@
                         if ($is_query_run = mysqli_query($link, $query)) {
                             while ($result = mysqli_fetch_assoc ($is_query_run))
                             { ?>
-                                <a class='card card--projects' href='./project.php?id=<?= $result['id'] ?>'>
+                                <a class='card card--projects' href='<?= $path ?>project/<?= strtolower(urlencode($result['name'])) ?>'>
                                     <div class='text'>
                                         <h2><?= $result['name'] ?></h2>
                                         <div class="text__tags">

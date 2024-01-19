@@ -13,7 +13,7 @@
     ?>
     <?php set_social_meta() ?>
 
-    <?php echo '<link rel="stylesheet" href="' . $path . 'files/styles/core.css">' ?>
+    <?= '<link rel="stylesheet" href="' . $path . 'files/styles/core.css">' ?>
     <?= '<link rel="apple-touch-icon" sizes="180x180" href="' . $path . 'files/logos/apple-touch-icon.png">' ?>
     <?= '<link rel="icon" type="image/png" sizes="32x32" href="' . $path . 'files/logos/favicon-32x32.png">' ?>
     <?= '<link rel="icon" type="image/png" sizes="16x16" href="' . $path . 'files/logos/favicon-16x16.png">' ?>
@@ -33,7 +33,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-YBKBS0EKY7');
     </script>
 

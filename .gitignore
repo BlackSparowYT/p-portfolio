@@ -1,4 +1,5 @@
 *.zip
+*.htaccess
 *(Conflicted copy * by *).*
 *log.txt
 log.txt

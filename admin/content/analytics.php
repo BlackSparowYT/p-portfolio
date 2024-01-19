@@ -53,7 +53,7 @@
                                     data: {
                                         labels: xValues,
                                         datasets: [{
-                                            label: "Visitors last week",
+                                            label: "Last 7 days",
                                             borderColor: '#8FD4FF',
                                             data: yValues,
                                             borderRadius: 10,             
@@ -110,7 +110,7 @@
                                     data: {
                                         labels: xValues,
                                         datasets: [{
-                                            label: "Visitors last year",
+                                            label: "Last 12 months",
                                             borderColor: '#8FD4FF',
                                             data: yValues,
                                             borderRadius: 10,             
@@ -170,7 +170,7 @@
                                     data: {
                                         labels: xValues,
                                         datasets: [{
-                                            label: "Visitors last years",
+                                            label: "Last 5 years",
                                             borderColor: '#8FD4FF',
                                             data: yValues,
                                             borderRadius: 10,             
@@ -179,7 +179,7 @@
                                     },
                                     options: {
                                         legend: {
-                                            display: false
+                                            display: true
                                         },
                                         maintainAspectRatio: false,
                                         scales: {

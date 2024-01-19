@@ -156,16 +156,16 @@
                     <?php if($type == "project") : ?>
                         <div class="form__box">
                             <h3>Project title</h3>
-                            <input name="name">
+                            <input name="name" placeholder="Super cool project title">
                         </div>
                         <div class="form__box">
                             <h3>Excerpt</h3>
-                            <textarea name="excerpt"></textarea>
+                            <textarea name="excerpt" placeholder="This is a super cool expcert for an even cooler project, so put all the info in here and show the world!"></textarea>
                         </div>
                         <div class="form__box">
                             <div class="col">
                                 <h3>Content Block</h3>
-                                <textarea name="content1"></textarea>
+                                <textarea name="content1" placeholder="This is the first content block for your awesome project, place any info you want the world to know here"></textarea>
                             </div>
                             <div class="col">
                                 <h3>Image</h3>
@@ -174,7 +174,7 @@
                         </div>
                         <div class="form__box">
                             <h3>Content Block</h3>
-                            <textarea name="content2"></textarea>
+                            <textarea name="content2" placeholder="This is an even bigger content block for you very own awesome project!"></textarea>
                         </div>
                         <div class="form__box">
                             <div class="col">

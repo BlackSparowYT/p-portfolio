@@ -22,7 +22,7 @@
             <div class="btn-group">
                 <a class="btn btn--primary btn--small" href="./view.php?type=project&mode=add"><i class="da-icon da-icon--plus da-icon--small"></i>Add project</a>
             </div>
-            <table id="projectsTable" class="display" data-page-length='13'>
+            <table id="projectsTable" class="display" data-page-length='20'>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -51,7 +51,7 @@
             </table>
             <script>
                 let table = new DataTable('#projectsTable', {
-                    "lengthMenu": [13],
+                    "lengthMenu": [20],
                 });
             </script>
         </main>

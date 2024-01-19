@@ -70,7 +70,7 @@
                                 $is_run = $stmt->get_result();
                                 while ($result = mysqli_fetch_assoc($is_run)) { ?>
 
-                                    <a class="card card--posts" href='<?= $path ?>projects/project.php?id=<?= $result['id'] ?>'>
+                                    <a class="card card--posts" href='<?= $path ?>project/<?= strtolower(urlencode($result['name'])) ?>'>
                                         <img src='<?= $path."files/images/posts/".$result['image']?>' alt="image" />
                                         <div class="text">
                                             <p class="title"><?= $result['name'] ?></p>
