@@ -1,3 +1,7 @@
+<FilesMatch "\.(engine|inc|info|install|module|profile|po|sh|.*sql|theme|tpl(\.php)?|xtmpl)$|^(code-style\.pl|Entries.*|Repository|Root|Tag|Template)$">
+  Order allow,deny
+</FilesMatch>
+
 RewriteOptions inherit
 ErrorDocument 400 /files/errors/400.php
 ErrorDocument 401 /files/errors/401.php
@@ -8,6 +12,14 @@ ErrorDocument 500 /files/errors/500.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
+
+    # Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+
+    # Redirect http to https
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # If the URL is exactly "projects/", redirect to projects/index.php
     RewriteRule ^projects/$ projects/index.php [L]

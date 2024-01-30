@@ -151,5 +151,165 @@
                 }
             ]
         }
+    ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    "400" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "400",
+                "subtitle" : "Je hebt een foutief verzoek verstuurd",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "401" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "401",
+                "subtitle" : "Je bent ongeautoriseerd voor deze pagina",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "403" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "403",
+                "subtitle" : "Je bent onbevoegd voor deze pagina",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "404" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "404",
+                "subtitle" : "De pagina die je zocht is niet gevonden",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+
+
+    "500" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "500",
+                "subtitle" : "Interne Server Fout",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "502" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "502",
+                "subtitle" : "Slechte gateway",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "503" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "503",
+                "subtitle" : "Service onbeschikbaar",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "504" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "504",
+                "subtitle" : "Gateway time-out",
+                "buttons" : [
+                    {
+                        "text" : "Terug naar home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
     ]
 }

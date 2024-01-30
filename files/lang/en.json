@@ -8,12 +8,12 @@
                 "subtitle" : "Starting Web Developer",
                 "buttons" : [
                     {
-                        "text" : "Bekijk mijn werk",
+                        "text" : "View my work",
                         "link" : "https://[%siteUrl]/projects",
                         "type" : "secondary"
                     },
                     {
-                        "text" : "Neem contact op",
+                        "text" : "Get in contact",
                         "link" : "https://[%siteUrl]/contact",
                         "type" : "secondary"
                     }
@@ -23,20 +23,20 @@
         {
             "id" : 2,
             "block_name" : "text",
-            "block_title" : "Over mij",
+            "block_title" : "About me",
             "content" : {
-                "title" : "Wie ben ik op dit kleine stukje van het web?",
-                "text1" : "Welkom op mijn digitale hoekje van het web! Mijn naam is Finn, een gedreven student in softwareontwikkeling met een bijzondere focus op de intrigerende wereld van web technologie. Met ~5 jaar aan zelfgeleerde ervaring omarm ik met enthousiasme de uitdagingen van het coderen, waarbij ik me voortdurend laat inspireren door de magie van code. Mijn nieuwsgierigheid en liefde voor het vak hebben me niet alleen geholpen om de complexiteit van het programmeren te omarmen, maar stimuleren me ook om continue te leren en te groeien in deze boeiende discipline.",
-                "text2" : "\\n\\nNieuwsgierig naar mijn andere interesses? Lees meer over mij en ontdek mijn diverse wereld van hobby's op de <a class='btn btn--link' href='./over-mij'>over mij</a> pagina!",
+                "title" : "Who am I on this little slice of the web?",
+                "text1" : "Welcome to my digital corner of the web! My name is Finn, a passionate software development student with a particular focus on the intriguing world of web technology. With ~5 years of self-taught experience, I enthusiastically embrace the challenges of coding, constantly being inspired by the magic of code. My curiosity and love for the profession have not only helped me embrace the complexities of programming, but also encourage me to continuously learn and grow in this exciting discipline.",
+                "text2" : "\\n\\nCurious about my other interests? Read more about me and discover my diverse world of hobbies on the <a class='btn btn--link' href='./over-mij'>about me</a> page!",
                 "image" : "https://cdn.vacso.cloud/frjosten.nl/images/profile2.png",
                 "buttons" : [
                     {
-                        "text" : "Bekijk over mij pagina",
+                        "text" : "View my about me",
                         "link" : "https://[%siteUrl]/over-mij",
                         "type" : "primary"
                     },
                     {
-                        "text" : "Bekijk mijn werk",
+                        "text" : "View my work",
                         "link" : "https://[%siteUrl]/projects",
                         "type" : "secondary"
                     }
@@ -46,9 +46,9 @@
         {
             "id" : 3,
             "block_name" : "posts",
-            "block_title" : "Projecten",
+            "block_title" : "Projects",
             "content" : {
-                "title" : "Projecten & Sites die ik heb gemaakt",
+                "title" : "Projects & Sites I have made",
                 "posts" : [
                     1,
                     2,
@@ -56,7 +56,7 @@
                 ],
                 "buttons" : [
                     {
-                        "text" : "Bekijk meer",
+                        "text" : "More",
                         "link" : "https://[%siteUrl]/projects",
                         "type" : "readmore"
                     }
@@ -69,7 +69,7 @@
             "id" : 1,
             "block_name" : "hero",
             "content" : {
-                "title" : "Mijn werk"
+                "title" : "My work"
             }
         }
     ],
@@ -77,9 +77,9 @@
         {
             "id" : 1,
             "block_name" : "project",
-            "block_title" : "Het project",
+            "block_title" : "The project",
             "content" : {
-                "title" : "Over het project"
+                "title" : "About the project"
             }
         },
         {
@@ -87,19 +87,19 @@
             "block_name" : "skills",
             "block_title" : "Skills",
             "content" : {
-                "title" : "Skills die gebruikt zijn voor dit project"
+                "title" : "Skills i used for this project"
             }
         },
         {
             "id" : 3,
             "block_name" : "posts",
-            "block_title" : "Projecten",
+            "block_title" : "Projects",
             "content" : {
-                "title" : "Meer zoals dit",
+                "title" : "More like this",
                 "posts" : [
-                    1,
-                    2,
-                    3
+                    4,
+                    5,
+                    6
                 ]
             }
         }
@@ -109,20 +109,20 @@
             "id" : 1,
             "block_name" : "hero",
             "content" : {
-                "title" : "Over mij"
+                "title" : "About me"
             }
         },
         {
             "id" : 2,
             "block_name" : "text",
-            "block_title" : "Over mij",
+            "block_title" : "About me",
             "content" : {
-                "title" : "Wie ben ik?",
-                "text" : "Welkom op mijn digitale hoekje! Ik ben Finn, een enthousiaste student in softwareontwikkeling met al zo'n vijf jaar ervaring in het betoverende rijk van code. Wat begon als een ontdekkingsreis door eenvoudige programmeertalen, is nu uitgegroeid tot een duik in de intrigerende complexiteit van het coderen.\\n\\nMaar wacht, er is meer dan alleen bits en bytes in mijn wereld! In mijn vrije tijd neem ik mijn drone mee op geweldige vluchten, verken ik avontuurlijke bestemmingen tijdens vakanties met gaafste wandelingen en ontspan ik met boogschieten en judo. Deze activiteiten geven kleur aan mijn dagen en zorgen voor de nodige afwisseling.\\n\\nTerwijl ik blijf spelen met code en nieuwe dingen ontdek, nodig ik je uit om meer te ontdekken over mijn digitale en avontuurlijke wereld!",
+                "title" : "Who am I?",
+                "text" : "Welcome to my digital corner! I'm Finn, an enthusiastic software development student with about five years of experience in the enchanting realm of code already. What began as a voyage of discovery through simple programming languages has now turned into a dive into the intriguing complexities of coding.\\n\\nBut wait, there's more than just bits and bytes in my world! In my spare time, I take my drone on amazing flights, explore adventurous destinations on holidays with cool hikes and relax with archery and judo. These activities add colour and variety to my days.\\n\\nAs I continue to play with code and discover new things, I invite you to discover more about my digital and adventurous world!",
                 "image" : "https://cdn.vacso.cloud/frjosten.nl/images/profile.png",
                 "buttons" : [
                     {
-                        "text" : "Bekijk mijn werk",
+                        "text" : "View my work",
                         "link" : "https://[%siteUrl]/projects",
                         "type" : "primary"
                     }
@@ -136,20 +136,180 @@
             "content" : [
                 {
                     "id" : 3.1,
-                    "text" : "Drone vliegen, mijn ultieme ontsnapping naar vrijheid. Het gezoem van de propellers, de sensatie van stijgen in de lucht en het verkennen van de wereld van bovenaf. Het is meer dan een hobby; het is een manier om te ontsnappen aan de zwaartekracht van het dagelijkse leven. Elk avontuur brengt een nieuw verhaal, vastgelegd in luchtfoto's en herinneringen. En terwijl ik zweef boven de wereld, ontdek ik de kunst van vrijheid in zijn puurste vorm.",
+                    "text" : "Drone flying, my ultimate escape to freedom. The hum of the propellers, the thrill of soaring into the sky and exploring the world from above. It's more than a hobby; it's a way to escape the gravity of everyday life. Each adventure brings a new story, captured in aerial photographs and memories. And while floating above the world, I discover the art of freedom in its purest form.",
                     "image" : "https://cdn.vacso.cloud/frjosten.nl/images/drone.png"
                 },
                 {
                     "id" : 3.2,
-                    "text" : "Mountainbiken, mijn avontuurlijke ontsnapping tot ver buiten de gebaande paden. Vooral op vakantie, nieuwe paden betredend en adembenemende landschappen doorkruisend, is elke afdaling een uitdaging die ik graag aanga. Mountainbiken biedt een intense workout en een ongeëvenaarde vrijheid te midden van de natuurlijke pracht, vol adrenaline.",
+                    "text" : "Mountain biking, my adventure escape far off the beaten track. Especially on holiday, treading new trails and traversing breathtaking landscapes, every descent is a challenge I love to take on. Mountain biking offers an intense workout and unparalleled freedom amidst natural splendour, full of adrenaline.",
                     "image" : "https://cdn.vacso.cloud/frjosten.nl/images/mountainbiken.png"
                 },
                 {
                     "id" : 3.3,
-                    "text" : "Boogschieten, mijn ontsnapping uit de dagelijkse drukte. De kracht van de boog, concentratie op het doel, vooral bij 3D schieten waar de natuurlijke omgeving en uitdagende doelen de adrenaline laten stromen. Elke pijl die zijn doel raakt, vertelt een verhaal van focus en precisie, een persoonlijke triomf. In het boogschieten, en vooral bij 3D schieten, vind ik niet alleen een sportieve uitdaging, maar ook een moment van puur plezier en avontuur.",
+                    "text" : "Archery, my escape from the daily hustle and bustle. The power of the bow, concentration on the target, especially in 3D shooting where the natural environment and challenging targets get the adrenaline flowing. Every arrow that hits its target tells a story of focus and precision, a personal triumph. In archery, and especially in 3D shooting, I find not only a sporting challenge, but also a moment of pure fun and adventure.",
                     "image" : "https://cdn.vacso.cloud/frjosten.nl/images/boogschieten.png"
                 }
             ]
+        }
+    ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    "400" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "400",
+                "subtitle" : "You have sent an incorrect request",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "401" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "401",
+                "subtitle" : "You are unauthorized for this page",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "403" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "403",
+                "subtitle" : "You are not authorized to use this page",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "404" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "404",
+                "subtitle" : "The page you were looking for was not found",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+
+
+    "500" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "500",
+                "subtitle" : "Internal Server Error",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "502" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "502",
+                "subtitle" : "Bad gateway",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "503" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "503",
+                "subtitle" : "Service unavailable",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
+        }
+    ],
+    "504" : [
+        {
+            "id" : 1,
+            "block_name" : "hero",
+            "content" : {
+                "title" : "504",
+                "subtitle" : "Gateway time-out",
+                "buttons" : [
+                    {
+                        "text" : "Back to home",
+                        "link" : "https://[%siteUrl]/",
+                        "type" : "secondary"
+                    }
+                ]
+            }
         }
     ]
 }
